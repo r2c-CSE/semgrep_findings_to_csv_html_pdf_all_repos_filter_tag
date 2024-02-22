@@ -27,10 +27,11 @@ This script automates the process of generating Security Static Analysis (SAST) 
 `pip install requests pandas fpdf pdfkit PyPDF2`
 
 ## Configuration
-Before running the script, you must set up the SEMGREP_API_WEB_TOKEN environment variable with your Semgrep API token:
-
+Before running the script, you must set up the `SEMGREP_API_WEB_TOKEN` environment variable with your Semgrep API token:
 
 `export SEMGREP_API_WEB_TOKEN='your_api_token_here'`
+
+Generate your `SEMGREP_API_WEB_TOKEN` from https://semgrep.dev/orgs/-/settings/tokens 
 
 Optionally, you can modify the script to change the default behavior, such as filtering findings based on severity by setting FILTER_IMPORTANT_FINDINGS to True or False.
 
