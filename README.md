@@ -25,7 +25,7 @@ This script automates the process of generating Security Static Analysis (SAST) 
 2. Install the required Python packages:
 
 ```bash
-pip install requests pandas fpdf pdfkit PyPDF2```
+pip install requests pandas fpdf pdfkit PyPDF2
 
 
 ## Configuration
