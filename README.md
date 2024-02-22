@@ -24,9 +24,7 @@ This script automates the process of generating Security Static Analysis (SAST) 
 1. Ensure Python 3 and pip are installed.
 2. Install the required Python packages:
 
-```bash
-pip install requests pandas fpdf pdfkit PyPDF2
-
+`pip install requests pandas fpdf pdfkit PyPDF2`
 
 ## Configuration
 Before running the script, you must set up the SEMGREP_API_WEB_TOKEN environment variable with your Semgrep API token:
