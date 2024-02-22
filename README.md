@@ -33,7 +33,7 @@ Before running the script, you must set up the `SEMGREP_API_WEB_TOKEN` environme
 
 Generate your `SEMGREP_API_WEB_TOKEN` from https://semgrep.dev/orgs/-/settings/tokens 
 
-Optionally, you can modify the script to change the default behavior, such as filtering findings based on severity by setting FILTER_IMPORTANT_FINDINGS to True or False.
+Optionally, you can modify the script to change the default behavior, such as filtering findings based on severity by setting `FILTER_IMPORTANT_FINDINGS` to `True` or `False`.
 
 Usage
 Run the script from the command line, specifying the tag of the projects you want to generate reports for:
