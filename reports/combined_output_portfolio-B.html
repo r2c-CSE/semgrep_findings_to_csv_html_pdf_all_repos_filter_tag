@@ -1,0 +1,1825 @@
+
+    <html>
+    <head>
+    <title> Semgrep SAST Scan Report for All Repository with tag portfolio-B </title>
+    <style>
+    .my_table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .my_table th, .my_table td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+    .my_table th {
+        background-color: #f2f2f2;
+    }
+    /* Example of setting specific column widths */
+    .my_table td:nth-of-type(1) { /* Targeting first column */
+        width: 40% !important;
+    }
+    </style>
+    <style>
+        #myImage {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%; /* or any desired width */
+            height: auto; /* to maintain the aspect ratio */
+        }
+    </style>
+    <style>
+        .centered-table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    </head>
+    <header>
+        <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    </header>
+    <body>
+    <div style="height: 75px;"></div> <!-- Creates 75px of vertical space -->
+    <div class="container">
+    <img src="https://i.ibb.co/8xyV6WJ/Semgrep-logo.png" alt="logo" id="myImage">
+    </div>
+    <div class="container">
+    <h1> <p style="text-align: center;" id="sast"> Semgrep SAST Scan Report for All Repositories with tag portfolio-B </p> </h1>
+    <h2> <p style="text-align: center;" id="reporttime"> Report Generated at 2024-02-22 18:18</p> </h2>
+    </div>
+    <div style="height: 40px;"></div> <!-- Creates 50px of vertical space -->
+    <div class="topnav">
+    <h2> <p style="text-align: center;" id="sast-summary"> SAST Scan Summary </p> </h2>
+
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="html_summary_table"> Findings Summary </p> </h2>
+    </div>
+    <div class="container" class="centered-table">
+        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Project Name</th>
+      <th>High/Ignored</th>
+      <th>High/Fixed</th>
+      <th>High/Removed</th>
+      <th>High/Open</th>
+      <th>Medium/Ignored</th>
+      <th>Medium/Fixed</th>
+      <th>Medium/Removed</th>
+      <th>Medium/Open</th>
+      <th>Low/Ignored</th>
+      <th>Low/Fixed</th>
+      <th>Low/Removed</th>
+      <th>Low/Open</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Semgrep-Demo/js-app</td>
+      <td>0</td>
+      <td>12</td>
+      <td>0</td>
+      <td>22</td>
+      <td>0</td>
+      <td>12</td>
+      <td>0</td>
+      <td>66</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>Semgrep-Demo/pro-engine-demo</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>18</td>
+      <td>0</td>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+
+
+    <div style="page-break-after: always;"></div>
+    <div style="height: 75px;"></div> <!-- Creates 75px of vertical space -->
+    <div class="container">
+    <img src="https://i.ibb.co/8xyV6WJ/Semgrep-logo.png" alt="logo" id="myImage">
+    </div>
+    <div class="container">
+    <h1> <p style="text-align: center;" id="sast"> Semgrep SAST Scan Report for Repository: Semgrep-Demo/js-app </p> </h1>
+    <h2> <p style="text-align: center;" id="reporttime"> Report Generated at 2024-02-22 18:18 </p> </h2>
+    </div>
+    <div style="height: 40px;"></div> <!-- Creates 50px of vertical space -->
+    <div class="topnav">
+    <h2> <p style="text-align: center;" id="sast-summary"> SAST Scan Summary </p> </h2>
+
+    <table border="1" class="centered-table"> <!-- Added border for visibility -->
+        <!-- Table Header -->
+        <tr>
+            <th>Vulnerability Severity</th>
+            <th>Vulnerability Count</th>
+        </tr>
+
+        <!-- Table Rows and Data Cells -->
+        <tr>
+            <td><a href="#sast-high"> Findings- SAST High Severity </a> </td>
+            <td> 34 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-med"> Findings- SAST Medium Severity </a> </td>
+            <td> 78 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-low"> Findings- SAST Low Severity </a> </td>
+            <td> 17 </td>
+        </tr>
+    </table>
+
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-high"> Findings Summary- HIGH Severity </p> </h2>
+    </div>
+    <div class="container">
+        <table border="1" class="dataframe my_table" id="tableHigh">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection'>express-sequelize-injection</a></td>
+      <td>Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/pull/27/merge</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/merge/data/static/codefixes/dbSchemaChallenge_1.ts#L17'>data/static/codefixes/dbSchemaChallenge_1.ts#L17</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/dataExport.ts#L61'>routes/dataExport.ts#L61</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/likeProductReviews.ts#L18'>routes/likeProductReviews.ts#L18</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/likeProductReviews.ts#L25'>routes/likeProductReviews.ts#L25</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/likeProductReviews.ts#L31'>routes/likeProductReviews.ts#L31</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/likeProductReviews.ts#L42'>routes/likeProductReviews.ts#L42</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/showProductReviews.ts#L34'>routes/showProductReviews.ts#L34</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/trackOrder.ts#L18'>routes/trackOrder.ts#L18</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/updateProductReviews.ts#L18'>routes/updateProductReviews.ts#L18</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-generic-secret.detected-generic-secret'>detected-generic-secret</a></td>
+      <td>Generic Secret detected</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/static/users.yml#L150'>data/static/users.yml#L150</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection'>express-sequelize-injection</a></td>
+      <td>Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/pull/16/merge</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/merge/data/static/codefixes/dbSchemaChallenge_1.ts#L29'>data/static/codefixes/dbSchemaChallenge_1.ts#L29</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection'>express-sequelize-injection</a></td>
+      <td>Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/pull/16/merge</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/merge/data/static/codefixes/dbSchemaChallenge_1.ts#L5'>data/static/codefixes/dbSchemaChallenge_1.ts#L5</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-artifactory-password.detected-artifactory-password'>detected-artifactory-password</a></td>
+      <td>Artifactory token detected</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/assets/public/images/Welcome_Banner.svg#L1'>frontend/src/assets/public/images/Welcome_Banner.svg#L1</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-artifactory-password.detected-artifactory-password'>detected-artifactory-password</a></td>
+      <td>Artifactory token detected</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/assets/public/images/Welcome_Banner.svg#L1'>frontend/src/assets/public/images/Welcome_Banner.svg#L1</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/dataExport.ts#L61'>routes/dataExport.ts#L61</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/likeProductReviews.ts#L18'>routes/likeProductReviews.ts#L18</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/likeProductReviews.ts#L25'>routes/likeProductReviews.ts#L25</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/likeProductReviews.ts#L31'>routes/likeProductReviews.ts#L31</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/likeProductReviews.ts#L42'>routes/likeProductReviews.ts#L42</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/showProductReviews.ts#L34'>routes/showProductReviews.ts#L34</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/trackOrder.ts#L18'>routes/trackOrder.ts#L18</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.mongodb.express-mongo-nosqli.express-mongo-nosqli'>express-mongo-nosqli</a></td>
+      <td>Detected a `../data/mongodb` statement that comes from a `req` argument. This could lead to NoSQL injection if the variable is user-controlled and is not properly sanitized. Be sure to properly sanitize the data if you absolutely must pass request data into a mongo query.</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/updateProductReviews.ts#L18'>routes/updateProductReviews.ts#L18</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.browser.security.insecure-document-method.insecure-document-method'>insecure-document-method</a></td>
+      <td>User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/assets/private/three.js#L11375'>frontend/src/assets/private/three.js#L11375</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection'>express-sequelize-injection</a></td>
+      <td>Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/static/codefixes/dbSchemaChallenge_1.ts#L5'>data/static/codefixes/dbSchemaChallenge_1.ts#L5</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection'>express-sequelize-injection</a></td>
+      <td>Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/static/codefixes/dbSchemaChallenge_3.ts#L11'>data/static/codefixes/dbSchemaChallenge_3.ts#L11</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection'>express-sequelize-injection</a></td>
+      <td>Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/static/codefixes/unionSqlInjectionChallenge_1.ts#L6'>data/static/codefixes/unionSqlInjectionChallenge_1.ts#L6</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection'>express-sequelize-injection</a></td>
+      <td>Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/static/codefixes/unionSqlInjectionChallenge_3.ts#L10'>data/static/codefixes/unionSqlInjectionChallenge_3.ts#L10</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection'>express-sequelize-injection</a></td>
+      <td>Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/login.ts#L36'>routes/login.ts#L36</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection'>express-sequelize-injection</a></td>
+      <td>Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/search.ts#L23'>routes/search.ts#L23</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-generic-secret.detected-generic-secret'>detected-generic-secret</a></td>
+      <td>Generic Secret detected</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/static/users.yml#L150'>data/static/users.yml#L150</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-jwt-token.detected-jwt-token'>detected-jwt-token</a></td>
+      <td>JWT token detected</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/app.guard.spec.ts#L40'>frontend/src/app/app.guard.spec.ts#L40</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-jwt-token.detected-jwt-token'>detected-jwt-token</a></td>
+      <td>JWT token detected</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/last-login-ip/last-login-ip.component.spec.ts#L50'>frontend/src/app/last-login-ip/last-login-ip.component.spec.ts#L50</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-jwt-token.detected-jwt-token'>detected-jwt-token</a></td>
+      <td>JWT token detected</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/last-login-ip/last-login-ip.component.spec.ts#L56'>frontend/src/app/last-login-ip/last-login-ip.component.spec.ts#L56</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.browser.security.insecure-document-method.insecure-document-method'>insecure-document-method</a></td>
+      <td>User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/hacking-instructor/index.ts#L107'>frontend/src/hacking-instructor/index.ts#L107</a></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-med"> Findings Summary- MEDIUM Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableMedium">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L107'>routes/vulnCodeSnippet.ts#L107</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/fileServer.ts#L33'>routes/fileServer.ts#L33</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.regexp-redos.regexp-redos'>regexp-redos</a></td>
+      <td>Detected `req` argument enters calls to `RegExp`. This could lead to a Regular Expression Denial of Service (ReDoS) through catastrophic backtracking. If the input is attacker controllable, this vulnerability can lead to systems being non-responsive or may crash due to ReDoS. Where possible avoid calls to `RegExp` with user input, if required ensure user input is escaped or validated.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L104'>routes/vulnCodeSnippet.ts#L104</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.regexp-redos.regexp-redos'>regexp-redos</a></td>
+      <td>Detected `req` argument enters calls to `RegExp`. This could lead to a Regular Expression Denial of Service (ReDoS) through catastrophic backtracking. If the input is attacker controllable, this vulnerability can lead to systems being non-responsive or may crash due to ReDoS. Where possible avoid calls to `RegExp` with user input, if required ensure user input is escaped or validated.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L108'>routes/vulnCodeSnippet.ts#L108</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.regexp-redos.regexp-redos'>regexp-redos</a></td>
+      <td>Detected `req` argument enters calls to `RegExp`. This could lead to a Regular Expression Denial of Service (ReDoS) through catastrophic backtracking. If the input is attacker controllable, this vulnerability can lead to systems being non-responsive or may crash due to ReDoS. Where possible avoid calls to `RegExp` with user input, if required ensure user input is escaped or validated.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L123'>routes/vulnCodeSnippet.ts#L123</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.regexp-redos.regexp-redos'>regexp-redos</a></td>
+      <td>Detected `req` argument enters calls to `RegExp`. This could lead to a Regular Expression Denial of Service (ReDoS) through catastrophic backtracking. If the input is attacker controllable, this vulnerability can lead to systems being non-responsive or may crash due to ReDoS. Where possible avoid calls to `RegExp` with user input, if required ensure user input is escaped or validated.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L125'>routes/vulnCodeSnippet.ts#L125</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing'>express-check-directory-listing</a></td>
+      <td>Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/server.ts#L241'>server.ts#L241</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing'>express-check-directory-listing</a></td>
+      <td>Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/server.ts#L246'>server.ts#L246</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing'>express-check-directory-listing</a></td>
+      <td>Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/server.ts#L250'>server.ts#L250</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-path-join-resolve-traversal.express-path-join-resolve-traversal'>express-path-join-resolve-traversal</a></td>
+      <td>Possible writing outside of the destination, make sure that the target path is nested in the intended destination</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/fileServer.ts#L33'>routes/fileServer.ts#L33</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp'>detect-non-literal-regexp</a></td>
+      <td>RegExp() called with a `req` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L104'>routes/vulnCodeSnippet.ts#L104</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp'>detect-non-literal-regexp</a></td>
+      <td>RegExp() called with a `req` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L123'>routes/vulnCodeSnippet.ts#L123</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp'>detect-non-literal-regexp</a></td>
+      <td>RegExp() called with a `req` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L125'>routes/vulnCodeSnippet.ts#L125</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L33'>routes/vulnCodeSnippet.ts#L33</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing'>express-check-directory-listing</a></td>
+      <td>Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/server.ts#L241'>server.ts#L241</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing'>express-check-directory-listing</a></td>
+      <td>Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/server.ts#L246'>server.ts#L246</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing'>express-check-directory-listing</a></td>
+      <td>Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/server.ts#L250'>server.ts#L250</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/fileServer.ts#L33'>routes/fileServer.ts#L33</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L33'>routes/vulnCodeSnippet.ts#L33</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L107'>routes/vulnCodeSnippet.ts#L107</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-res-sendfile.express-res-sendfile'>express-res-sendfile</a></td>
+      <td>The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/fileServer.ts#L33'>routes/fileServer.ts#L33</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.jssha.jssha-sha1.jssha-sha1'>jssha-sha1</a></td>
+      <td>The SHA1 hashing algorithm is considered to be weak. If this is used in any sensitive operation such as password hashing, or is used to ensure data integrity (collision sensitive) then you should use a stronger hashing algorithm. For passwords, consider using `Argon2id`, `scrypt`, or `bcrypt`. For data integrity, consider using `SHA-256`.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/utils.ts#L97'>lib/utils.ts#L97</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-res-sendfile.express-res-sendfile'>express-res-sendfile</a></td>
+      <td>The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/fileServer.ts#L33'>routes/fileServer.ts#L33</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.no-new-privileges.no-new-privileges'>no-new-privileges</a></td>
+      <td>Service &#39;app&#39; allows for privilege escalation via setuid or setgid binaries. Add &#39;no-new-privileges:true&#39; in &#39;security_opt&#39; to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/docker-compose.test.yml#L7'>docker-compose.test.yml#L7</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.unknown-value-with-script-tag.unknown-value-with-script-tag'>unknown-value-with-script-tag</a></td>
+      <td>Cannot determine what &#39;subs&#39; is and it is used with a &#39;&lt;script&gt;&#39; tag. This could be susceptible to cross-site scripting (XSS). Ensure &#39;subs&#39; is not externally controlled, or sanitize this data.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/videoHandler.ts#L57'>routes/videoHandler.ts#L57</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/fileUpload.ts#L29'>routes/fileUpload.ts#L29</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/keyServer.ts#L14'>routes/keyServer.ts#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/logfileServer.ts#L14'>routes/logfileServer.ts#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/quarantineServer.ts#L14'>routes/quarantineServer.ts#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.vm-injection.vm-runincontext-context-injection'>vm-runincontext-context-injection</a></td>
+      <td>Make sure that unverified user data can not reach vm.runInContext.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/b2bOrder.ts#L22'>routes/b2bOrder.ts#L22</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.vm-injection.vm-runincontext-context-injection'>vm-runincontext-context-injection</a></td>
+      <td>Make sure that unverified user data can not reach vm.runInContext.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/fileUpload.ts#L80'>routes/fileUpload.ts#L80</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.express-fs-filename.express-fs-filename'>express-fs-filename</a></td>
+      <td>The application builds a file path from potentially untrusted data, which can lead to a path traversal vulnerability. An attacker can manipulate the file path which the application uses to access files. If the application does not validate user input and sanitize file paths, sensitive files such as configuration or user data can be accessed, potentially creating or overwriting files. To prevent this vulnerability, validate and sanitize any input that is used to create references to file paths. Also, enforce strict file access controls. For example, choose privileges allowing public-facing applications to access only the required files.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/profileImageFileUpload.ts#L28'>routes/profileImageFileUpload.ts#L28</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.express-fs-filename.express-fs-filename'>express-fs-filename</a></td>
+      <td>The application builds a file path from potentially untrusted data, which can lead to a path traversal vulnerability. An attacker can manipulate the file path which the application uses to access files. If the application does not validate user input and sanitize file paths, sensitive files such as configuration or user data can be accessed, potentially creating or overwriting files. To prevent this vulnerability, validate and sanitize any input that is used to create references to file paths. Also, enforce strict file access controls. For example, choose privileges allowing public-facing applications to access only the required files.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/profileImageUrlUpload.ts#L31'>routes/profileImageUrlUpload.ts#L31</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.express-fs-filename.express-fs-filename'>express-fs-filename</a></td>
+      <td>The application builds a file path from potentially untrusted data, which can lead to a path traversal vulnerability. An attacker can manipulate the file path which the application uses to access files. If the application does not validate user input and sanitize file paths, sensitive files such as configuration or user data can be accessed, potentially creating or overwriting files. To prevent this vulnerability, validate and sanitize any input that is used to create references to file paths. Also, enforce strict file access controls. For example, choose privileges allowing public-facing applications to access only the required files.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeFixes.ts#L81'>routes/vulnCodeFixes.ts#L81</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.express-fs-filename.express-fs-filename'>express-fs-filename</a></td>
+      <td>The application builds a file path from potentially untrusted data, which can lead to a path traversal vulnerability. An attacker can manipulate the file path which the application uses to access files. If the application does not validate user input and sanitize file paths, sensitive files such as configuration or user data can be accessed, potentially creating or overwriting files. To prevent this vulnerability, validate and sanitize any input that is used to create references to file paths. Also, enforce strict file access controls. For example, choose privileges allowing public-facing applications to access only the required files.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeFixes.ts#L82'>routes/vulnCodeFixes.ts#L82</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-jwt-not-revoked.express-jwt-not-revoked'>express-jwt-not-revoked</a></td>
+      <td>No token revoking configured for `express-jwt`. A leaked token could still be used and unable to be revoked. Consider using function as the `isRevoked` option.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/insecurity.ts#L53'>lib/insecurity.ts#L53</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-jwt-not-revoked.express-jwt-not-revoked'>express-jwt-not-revoked</a></td>
+      <td>No token revoking configured for `express-jwt`. A leaked token could still be used and unable to be revoked. Consider using function as the `isRevoked` option.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/insecurity.ts#L54'>lib/insecurity.ts#L54</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-path-join-resolve-traversal.express-path-join-resolve-traversal'>express-path-join-resolve-traversal</a></td>
+      <td>Possible writing outside of the destination, make sure that the target path is nested in the intended destination</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/dataErasure.ts#L69'>routes/dataErasure.ts#L69</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-path-join-resolve-traversal.express-path-join-resolve-traversal'>express-path-join-resolve-traversal</a></td>
+      <td>Possible writing outside of the destination, make sure that the target path is nested in the intended destination</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/keyServer.ts#L14'>routes/keyServer.ts#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-path-join-resolve-traversal.express-path-join-resolve-traversal'>express-path-join-resolve-traversal</a></td>
+      <td>Possible writing outside of the destination, make sure that the target path is nested in the intended destination</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/logfileServer.ts#L14'>routes/logfileServer.ts#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-path-join-resolve-traversal.express-path-join-resolve-traversal'>express-path-join-resolve-traversal</a></td>
+      <td>Possible writing outside of the destination, make sure that the target path is nested in the intended destination</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/quarantineServer.ts#L14'>routes/quarantineServer.ts#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-res-sendfile.express-res-sendfile'>express-res-sendfile</a></td>
+      <td>The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/keyServer.ts#L14'>routes/keyServer.ts#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-res-sendfile.express-res-sendfile'>express-res-sendfile</a></td>
+      <td>The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/logfileServer.ts#L14'>routes/logfileServer.ts#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-res-sendfile.express-res-sendfile'>express-res-sendfile</a></td>
+      <td>The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/quarantineServer.ts#L14'>routes/quarantineServer.ts#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-ssrf.express-ssrf'>express-ssrf</a></td>
+      <td>The following request request.get() was found to be crafted from user-input `req` which can lead to Server-Side Request Forgery (SSRF) vulnerabilities. It is recommended where possible to not allow user-input to craft the base request, but to be treated as part of the path or query parameter. When user-input is necessary to craft the request, it is recommeneded to follow OWASP best practices to prevent abuse.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/profileImageUrlUpload.ts#L23'>routes/profileImageUrlUpload.ts#L23</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.express-insecure-template-usage.express-insecure-template-usage'>express-insecure-template-usage</a></td>
+      <td>User data from `req` is being compiled into the template, which can lead to a Server Side Template Injection (SSTI) vulnerability.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/userProfile.ts#L56'>routes/userProfile.ts#L56</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.session-fixation.session-fixation'>session-fixation</a></td>
+      <td>Detected `req` argument which enters `res.cookie`, this can lead to session fixation vulnerabilities if an attacker can control the cookie value. This vulnerability can lead to unauthorized access to accounts, and in some esoteric cases, Cross-Site-Scripting (XSS). Users should not be able to influence cookies directly, for session cookies, they should be generated securely using an approved session management library. If the cookie does need to be set by a user, consider using an allow-list based approach to restrict the cookies which can be set.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/insecurity.ts#L211'>lib/insecurity.ts#L211</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=typescript.angular.angular-route-bypass-security-trust.angular-route-bypass-security-trust'>angular-route-bypass-security-trust</a></td>
+      <td>Untrusted input could be used to tamper with a web page rendering, which can lead to a Cross-site scripting (XSS) vulnerability. XSS vulnerabilities occur when untrusted input executes malicious JavaScript code, leading to issues such as account compromise and sensitive information leakage. Validate the user input, perform contextual output encoding, or sanitize the input. A popular library used to prevent XSS is DOMPurify. You can also use libraries and frameworks such as Angular, Vue, and React, which offer secure defaults when rendering input.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/search-result/search-result.component.ts#L152'>frontend/src/app/search-result/search-result.component.ts#L152</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.open-redirect-deepsemgrep.open-redirect-deepsemgrep'>open-redirect-deepsemgrep</a></td>
+      <td>The application builds a URL using user-controlled input which can lead to an open redirect vulnerability. An attacker can manipulate the URL and redirect users to an arbitrary domain. Open redirect vulnerabilities can lead to issues such as Cross-site scripting (XSS) or redirecting to a malicious domain for activities such as phishing to capture users&#39; credentials. To prevent this vulnerability perform strict input validation of the domain against an allowlist of approved domains. Notify a user in your application that they are leaving the website. Display a domain where they are redirected to the user. A user can then either accept or deny the redirect to an untrusted site.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/redirect.ts#L19'>routes/redirect.ts#L19</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.request.ssrf-deepsemgrep.ssrf-deepsemgrep'>ssrf-deepsemgrep</a></td>
+      <td>Untrusted input might be used to build an HTTP request, which can lead to a Server-side request forgery (SSRF) vulnerability. SSRF allows an attacker to send crafted requests from the server side to other internal or external systems. SSRF can lead to unauthorized access to sensitive data and, in some cases, allow the attacker to control applications or systems that trust the vulnerable service. To prevent this vulnerability, avoid allowing user input to craft the base request. Instead, treat it as part of the path or query parameter and encode it appropriately. When user input is necessary to prepare the HTTP request, perform strict input validation. Additionally, whenever possible, use allowlists to only interact with expected, trusted domains.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/profileImageUrlUpload.ts#L23'>routes/profileImageUrlUpload.ts#L23</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-open-redirect.express-open-redirect'>express-open-redirect</a></td>
+      <td>The application redirects to a URL specified by user-supplied input `query` that is not validated. This could redirect users to malicious locations. Consider using an allow-list approach to validate URLs, or warn users they are being redirected to a third-party website.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/redirect.ts#L19'>routes/redirect.ts#L19</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.node-sequelize-hardcoded-secret-argument.node-sequelize-hardcoded-secret-argument'>node-sequelize-hardcoded-secret-argument</a></td>
+      <td>A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/pull/1/merge</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/merge/models/index.ts#L31'>models/index.ts#L31</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.browser.security.eval-detected.eval-detected'>eval-detected</a></td>
+      <td>Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/captcha.ts#L23'>routes/captcha.ts#L23</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.browser.security.eval-detected.eval-detected'>eval-detected</a></td>
+      <td>Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/userProfile.ts#L36'>routes/userProfile.ts#L36</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-detect-notevil-usage.express-detect-notevil-usage'>express-detect-notevil-usage</a></td>
+      <td>Detected usage of the `notevil` package, which is unmaintained and has vulnerabilities. Using any sort of `eval()` functionality can be very dangerous, but if you must, the `eval` package is an up to date alternative. Be sure that only trusted input reaches an `eval()` function.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/b2bOrder.ts#L22'>routes/b2bOrder.ts#L22</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-libxml-vm-noent.express-libxml-vm-noent'>express-libxml-vm-noent</a></td>
+      <td>Detected use of parseXml() function with the `noent` field set to `true`. This can lead to an XML External Entities (XXE) attack if untrusted data is passed into it.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/fileUpload.ts#L80'>routes/fileUpload.ts#L80</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-open-redirect.express-open-redirect'>express-open-redirect</a></td>
+      <td>The application redirects to a URL specified by user-supplied input `query` that is not validated. This could redirect users to malicious locations. Consider using an allow-list approach to validate URLs, or warn users they are being redirected to a third-party website.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/redirect.ts#L19'>routes/redirect.ts#L19</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape'>template-explicit-unescape</a></td>
+      <td>Detected an explicit unescape in a Pug template, using either &#39;!=&#39; or &#39;!{...}&#39;. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/views/promotionVideo.pug#L79'>views/promotionVideo.pug#L79</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.jsonwebtoken.security.audit.jwt-exposed-data.jwt-exposed-data'>jwt-exposed-data</a></td>
+      <td>The object is passed strictly to jsonwebtoken.sign(...) Make sure that sensitive information is not exposed through JWT token payload.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/insecurity.ts#L55'>lib/insecurity.ts#L55</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret'>hardcoded-jwt-secret</a></td>
+      <td>A hard-coded credential was detected. It is not recommended  to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary.  It is recommended to use environment variables to  securely provide credentials or retrieve credentials from  a secure vault or HSM (Hardware Security Module).</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/insecurity.ts#L55'>lib/insecurity.ts#L55</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.hardcoded.strings.detected-private-key.detected-private-key'>detected-private-key</a></td>
+      <td>A hard-coded credential was detected. It is not recommended  to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/insecurity.ts#L22'>lib/insecurity.ts#L22</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp'>detect-non-literal-regexp</a></td>
+      <td>RegExp() called with a `key` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L104'>routes/vulnCodeSnippet.ts#L104</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp'>detect-non-literal-regexp</a></td>
+      <td>RegExp() called with a `key` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L123'>routes/vulnCodeSnippet.ts#L123</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp'>detect-non-literal-regexp</a></td>
+      <td>RegExp() called with a `key` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L125'>routes/vulnCodeSnippet.ts#L125</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.hardcoded-hmac-key.hardcoded-hmac-key'>hardcoded-hmac-key</a></td>
+      <td>Detected a hardcoded hmac key. Avoid hardcoding secrets and consider using an alternate option such as reading the secret from a config file or using an environment variable.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/insecurity.ts#L43'>lib/insecurity.ts#L43</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.hardcoded-hmac-key.hardcoded-hmac-key'>hardcoded-hmac-key</a></td>
+      <td>Detected a hardcoded hmac key. Avoid hardcoding secrets and consider using an alternate option such as reading the secret from a config file or using an environment variable.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/insecurity.ts#L166'>lib/insecurity.ts#L166</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/datacreator.ts#L41'>data/datacreator.ts#L41</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/startup/restoreOverwrittenFilesWithOriginals.ts#L30'>lib/startup/restoreOverwrittenFilesWithOriginals.ts#L30</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/lib/startup/validatePreconditions.ts#L95'>lib/startup/validatePreconditions.ts#L95</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/dataErasure.ts#L69'>routes/dataErasure.ts#L69</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/fileUpload.ts#L39'>routes/fileUpload.ts#L39</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/order.ts#L46'>routes/order.ts#L46</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal'>path-join-resolve-traversal</a></td>
+      <td>Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/vulnCodeSnippet.ts#L33'>routes/vulnCodeSnippet.ts#L33</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop'>prototype-pollution-loop</a></td>
+      <td>Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/hacking-instructor/helpers/helpers.ts#L36'>frontend/src/hacking-instructor/helpers/helpers.ts#L36</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.unknown-value-with-script-tag.unknown-value-with-script-tag'>unknown-value-with-script-tag</a></td>
+      <td>Cannot determine what &#39;subs&#39; is and it is used with a &#39;&lt;script&gt;&#39; tag. This could be susceptible to cross-site scripting (XSS). Ensure &#39;subs&#39; is not externally controlled, or sanitize this data.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/videoHandler.ts#L69'>routes/videoHandler.ts#L69</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.sequelize.node-sequelize-hardcoded-secret-argument.node-sequelize-hardcoded-secret-argument'>node-sequelize-hardcoded-secret-argument</a></td>
+      <td>A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/models/index.ts#L31'>models/index.ts#L31</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.no-new-privileges.no-new-privileges'>no-new-privileges</a></td>
+      <td>Service &#39;app&#39; allows for privilege escalation via setuid or setgid binaries. Add &#39;no-new-privileges:true&#39; in &#39;security_opt&#39; to prevent this.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/docker-compose.test.yml#L7'>docker-compose.test.yml#L7</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service'>writable-filesystem-service</a></td>
+      <td>Service &#39;app&#39; is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add &#39;read_only: true&#39; to this service to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/docker-compose.test.yml#L7'>docker-compose.test.yml#L7</a></td>
+    </tr>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-low"> Findings Summary- LOW Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableLow">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.generic-api-key.generic-api-key'>generic-api-key</a></td>
+      <td>A gitleaks generic-api-key was detected which attempts to identify hard-coded credentials.  It is not recommended to store credentials in source-code, as this risks secrets being leaked  and used by either an internal or external malicious adversary. It is recommended to use  environment variables to securely provide credentials or retrieve credentials from a  secure vault or HSM (Hardware Security Module). This rule can introduce a lot of false positives,  it is not recommended to be used in PR comments.</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/static/users.yml#L88'>data/static/users.yml#L88</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.generic-api-key.generic-api-key'>generic-api-key</a></td>
+      <td>A gitleaks generic-api-key was detected which attempts to identify hard-coded credentials.  It is not recommended to store credentials in source-code, as this risks secrets being leaked  and used by either an internal or external malicious adversary. It is recommended to use  environment variables to securely provide credentials or retrieve credentials from a  secure vault or HSM (Hardware Security Module). This rule can introduce a lot of false positives,  it is not recommended to be used in PR comments.</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/static/users.yml#L150'>data/static/users.yml#L150</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.generic-api-key.generic-api-key'>generic-api-key</a></td>
+      <td>A gitleaks generic-api-key was detected which attempts to identify hard-coded credentials.  It is not recommended to store credentials in source-code, as this risks secrets being leaked  and used by either an internal or external malicious adversary. It is recommended to use  environment variables to securely provide credentials or retrieve credentials from a  secure vault or HSM (Hardware Security Module). This rule can introduce a lot of false positives,  it is not recommended to be used in PR comments.</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/oauth/oauth.component.spec.ts#L85'>frontend/src/app/oauth/oauth.component.spec.ts#L85</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.generic-api-key.generic-api-key'>generic-api-key</a></td>
+      <td>A gitleaks generic-api-key was detected which attempts to identify hard-coded credentials.  It is not recommended to store credentials in source-code, as this risks secrets being leaked  and used by either an internal or external malicious adversary. It is recommended to use  environment variables to securely provide credentials or retrieve credentials from a  secure vault or HSM (Hardware Security Module). This rule can introduce a lot of false positives,  it is not recommended to be used in PR comments.</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/oauth/oauth.component.spec.ts#L85'>frontend/src/app/oauth/oauth.component.spec.ts#L85</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.generic-api-key.generic-api-key'>generic-api-key</a></td>
+      <td>A gitleaks generic-api-key was detected which attempts to identify hard-coded credentials.  It is not recommended to store credentials in source-code, as this risks secrets being leaked  and used by either an internal or external malicious adversary. It is recommended to use  environment variables to securely provide credentials or retrieve credentials from a  secure vault or HSM (Hardware Security Module). This rule can introduce a lot of false positives,  it is not recommended to be used in PR comments.</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/oauth/oauth.component.spec.ts#L92'>frontend/src/app/oauth/oauth.component.spec.ts#L92</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.generic-api-key.generic-api-key'>generic-api-key</a></td>
+      <td>A gitleaks generic-api-key was detected which attempts to identify hard-coded credentials.  It is not recommended to store credentials in source-code, as this risks secrets being leaked  and used by either an internal or external malicious adversary. It is recommended to use  environment variables to securely provide credentials or retrieve credentials from a  secure vault or HSM (Hardware Security Module). This rule can introduce a lot of false positives,  it is not recommended to be used in PR comments.</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/routes/login.ts#L66'>routes/login.ts#L66</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/change-password/change-password.component.html#L33'>frontend/src/app/change-password/change-password.component.html#L33</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/change-password/change-password.component.html#L51'>frontend/src/app/change-password/change-password.component.html#L51</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/forgot-password/forgot-password.component.html#L53'>frontend/src/app/forgot-password/forgot-password.component.html#L53</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/forgot-password/forgot-password.component.html#L66'>frontend/src/app/forgot-password/forgot-password.component.html#L66</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/login/login.component.html#L27'>frontend/src/app/login/login.component.html#L27</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/register/register.component.html#L25'>frontend/src/app/register/register.component.html#L25</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.jwt.jwt'>jwt</a></td>
+      <td>A gitleaks jwt was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/app.guard.spec.ts#L40'>frontend/src/app/app.guard.spec.ts#L40</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.jwt.jwt'>jwt</a></td>
+      <td>A gitleaks jwt was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/frontend/src/app/last-login-ip/last-login-ip.component.spec.ts#L50'>frontend/src/app/last-login-ip/last-login-ip.component.spec.ts#L50</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.audit.detect-replaceall-sanitization.detect-replaceall-sanitization'>detect-replaceall-sanitization</a></td>
+      <td>Detected a call to `replaceAll()` in an attempt to HTML escape the string `tableData[i].description`. Manually sanitizing input through a manually built list can be circumvented in many situations, and it&#39;s better to use a well known sanitization library such as `sanitize-html` or `DOMPurify`.</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/static/codefixes/restfulXssChallenge_2.ts#L59'>data/static/codefixes/restfulXssChallenge_2.ts#L59</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.audit.detect-replaceall-sanitization.detect-replaceall-sanitization'>detect-replaceall-sanitization</a></td>
+      <td>Detected a call to `replaceAll()` in an attempt to HTML escape the string `tableData[i].description.replaceAll(&#39;&lt;&#39;, &#39;&amp;lt;&#39;)`. Manually sanitizing input through a manually built list can be circumvented in many situations, and it&#39;s better to use a well known sanitization library such as `sanitize-html` or `DOMPurify`.</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/data/static/codefixes/restfulXssChallenge_2.ts#L59'>data/static/codefixes/restfulXssChallenge_2.ts#L59</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage'>express-check-csurf-middleware-usage</a></td>
+      <td>A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies.</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/js-app/blob/main/server.ts#L91'>server.ts#L91</a></td>
+    </tr>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    
+ <div style="page-break-after: always;"></div>
+    <div style="height: 75px;"></div> <!-- Creates 75px of vertical space -->
+    <div class="container">
+    <img src="https://i.ibb.co/8xyV6WJ/Semgrep-logo.png" alt="logo" id="myImage">
+    </div>
+    <div class="container">
+    <h1> <p style="text-align: center;" id="sast"> Semgrep SAST Scan Report for Repository: Semgrep-Demo/pro-engine-demo </p> </h1>
+    <h2> <p style="text-align: center;" id="reporttime"> Report Generated at 2024-02-22 18:18 </p> </h2>
+    </div>
+    <div style="height: 40px;"></div> <!-- Creates 50px of vertical space -->
+    <div class="topnav">
+    <h2> <p style="text-align: center;" id="sast-summary"> SAST Scan Summary </p> </h2>
+
+    <table border="1" class="centered-table"> <!-- Added border for visibility -->
+        <!-- Table Header -->
+        <tr>
+            <th>Vulnerability Severity</th>
+            <th>Vulnerability Count</th>
+        </tr>
+
+        <!-- Table Rows and Data Cells -->
+        <tr>
+            <td><a href="#sast-high"> Findings- SAST High Severity </a> </td>
+            <td> 8 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-med"> Findings- SAST Medium Severity </a> </td>
+            <td> 36 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-low"> Findings- SAST Low Severity </a> </td>
+            <td> 11 </td>
+        </tr>
+    </table>
+
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-high"> Findings Summary- HIGH Severity </p> </h2>
+    </div>
+    <div class="container">
+        <table border="1" class="dataframe my_table" id="tableHigh">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.injection.tainted-sql-string.tainted-sql-string'>tainted-sql-string</a></td>
+      <td>User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`connection.PreparedStatement`) or a safe library.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/service/UserSearchService.java#L30'>src/main/java/hawk/service/UserSearchService.java#L30</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.injection.tainted-sql-string.tainted-sql-string'>tainted-sql-string</a></td>
+      <td>User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`connection.PreparedStatement`) or a safe library.</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/service/UserSearchService.java#L30'>src/main/java/hawk/service/UserSearchService.java#L30</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=semgrep_demo.crlf-injection-logs-deepsemgrep-javaorg-copy'>crlf-injection-logs-deepsemgrep-javaorg-copy</a></td>
+      <td>When data from an untrusted source is put into a logger and not neutralized correctly, an attacker could forge log entries or include malicious content. Please use the Jsoup.clean() function to sanitize data.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/api/jwt/JwtLog4jController.java#L24'>src/main/java/hawk/api/jwt/JwtLog4jController.java#L24</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.injection.tainted-sql-string.tainted-sql-string'>tainted-sql-string</a></td>
+      <td>User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`connection.PreparedStatement`) or a safe library.</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/service/UserSearchService.java#L30'>src/main/java/hawk/service/UserSearchService.java#L30</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.servlets.security.crlf-injection-logs-deepsemgrep.crlf-injection-logs-deepsemgrep'>crlf-injection-logs-deepsemgrep</a></td>
+      <td>When data from an untrusted source is put into a logger and not neutralized correctly, an attacker could forge log entries or include malicious content.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/api/jwt/JwtLog4jController.java#L24'>src/main/java/hawk/api/jwt/JwtLog4jController.java#L24</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-generic-secret.detected-generic-secret'>detected-generic-secret</a></td>
+      <td>Generic Secret detected</td>
+      <td>high</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/api/jwt/JwtTokenProvider.java#L21'>src/main/java/hawk/api/jwt/JwtTokenProvider.java#L21</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-private-key.detected-private-key'>detected-private-key</a></td>
+      <td>Private Key detected. This is a sensitive credential and should not be hardcoded here. Instead, store this in a separate, private file.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/keyStore.pem#L5'>src/main/resources/keyStore.pem#L5</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.audit.spring-actuator-fully-enabled.spring-actuator-fully-enabled'>spring-actuator-fully-enabled</a></td>
+      <td>Spring Boot Actuator is fully enabled. This exposes sensitive endpoints such as /actuator/env, /actuator/logfile, /actuator/heapdump and others. Unless you have Spring Security enabled or another means to protect these endpoints, this functionality is available without authentication, causing a significant security risk.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/application-postgresql.properties#L36'>src/main/resources/application-postgresql.properties#L36</a></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-med"> Findings Summary- MEDIUM Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableMedium">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/general.html#L30'>src/main/resources/templates/general.html#L30</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/login-form-multi.html#L15'>src/main/resources/templates/login-form-multi.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/login.html#L15'>src/main/resources/templates/login.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/search.html#L14'>src/main/resources/templates/search.html#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/user-search.html#L14'>src/main/resources/templates/user-search.html#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/general.html#L30'>src/main/resources/templates/general.html#L30</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/login-form-multi.html#L15'>src/main/resources/templates/login-form-multi.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/login.html#L15'>src/main/resources/templates/login.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/search.html#L14'>src/main/resources/templates/search.html#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/user-search.html#L14'>src/main/resources/templates/user-search.html#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/general.html#L30'>src/main/resources/templates/general.html#L30</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/login-form-multi.html#L15'>src/main/resources/templates/login-form-multi.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/login.html#L15'>src/main/resources/templates/login.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/search.html#L14'>src/main/resources/templates/search.html#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/user-search.html#L14'>src/main/resources/templates/user-search.html#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/general.html#L30'>src/main/resources/templates/general.html#L30</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/login-form-multi.html#L15'>src/main/resources/templates/login-form-multi.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/login.html#L15'>src/main/resources/templates/login.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/search.html#L14'>src/main/resources/templates/search.html#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/templates/user-search.html#L14'>src/main/resources/templates/user-search.html#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.github-actions.security.third-party-action-not-pinned-to-commit-sha.third-party-action-not-pinned-to-commit-sha'>third-party-action-not-pinned-to-commit-sha</a></td>
+      <td>An action sourced from a third-party repository on GitHub is not pinned to a full length commit SHA. Pinning an action to a full length commit SHA is currently the only way to use an action as an immutable release. Pinning to a particular SHA helps mitigate the risk of a bad actor adding a backdoor to the action&#39;s repository, as they would need to generate a SHA-1 collision for a valid Git object payload.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/.github/workflows/hawkscan.yml#L23'>.github/workflows/hawkscan.yml#L23</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.servlets.security.audit.cookie-missing-httponly.cookie-missing-httponly'>cookie-missing-httponly</a></td>
+      <td>A cookie was detected without setting the &#39;HttpOnly&#39; flag. The &#39;HttpOnly&#39; flag for cookies instructs the browser to forbid client-side scripts from reading the cookie. Set the &#39;HttpOnly&#39; flag by calling &#39;cookie.setHttpOnly(true);&#39;</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/controller/LoginController.java#L57'>src/main/java/hawk/controller/LoginController.java#L57</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.servlets.security.audit.cookie-missing-samesite.cookie-missing-samesite'>cookie-missing-samesite</a></td>
+      <td>The application does not appear to verify inbound requests which can lead to a Cross-site request forgery (CSRF) vulnerability. If the application uses cookie-based authentication, an attacker can trick users into sending authenticated HTTP requests without their knowledge from any arbitrary domain they visit. To prevent this vulnerability start by identifying if the framework or library leveraged has built-in features or offers plugins for CSRF protection. CSRF tokens should be unique and securely random. The `Synchronizer Token` or `Double Submit Cookie` patterns with defense-in-depth mechanisms such as the `sameSite` cookie flag can help prevent CSRF. For more information, see: [Cross-site request forgery prevention](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/controller/LoginController.java#L57'>src/main/java/hawk/controller/LoginController.java#L57</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.servlets.security.audit.cookie-missing-secure-flag.cookie-missing-secure-flag'>cookie-missing-secure-flag</a></td>
+      <td>A cookie was detected without setting the &#39;secure&#39; flag. The &#39;secure&#39; flag for cookies prevents the client from transmitting the cookie over insecure channels such as HTTP. Set the &#39;secure&#39; flag by calling &#39;new Cookie(&quot;XLOGINID&quot;, cookieCode).setSecure(true);&#39;</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/controller/LoginController.java#L57'>src/main/java/hawk/controller/LoginController.java#L57</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.no-new-privileges.no-new-privileges'>no-new-privileges</a></td>
+      <td>Service &#39;db&#39; allows for privilege escalation via setuid or setgid binaries. Add &#39;no-new-privileges:true&#39; in &#39;security_opt&#39; to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/docker-compose.yml#L3'>docker-compose.yml#L3</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.no-new-privileges.no-new-privileges'>no-new-privileges</a></td>
+      <td>Service &#39;javavulny&#39; allows for privilege escalation via setuid or setgid binaries. Add &#39;no-new-privileges:true&#39; in &#39;security_opt&#39; to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/docker-compose.yml#L12'>docker-compose.yml#L12</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.jsch.jsch-hardcoded-secret.jsch-hardcoded-secret'>jsch-hardcoded-secret</a></td>
+      <td>A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/pull/3/merge</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/merge/src/main/java/hawk/api/vuln1.java#L19'>src/main/java/hawk/api/vuln1.java#L19</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.jsch.jsch-hardcoded-secret.jsch-hardcoded-secret'>jsch-hardcoded-secret</a></td>
+      <td>A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/pull/3/merge</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/merge/src/main/java/hawk/api/vuln1.java#L23'>src/main/java/hawk/api/vuln1.java#L23</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.audit.spring-csrf-disabled.spring-csrf-disabled'>spring-csrf-disabled</a></td>
+      <td>CSRF protection is disabled for this configuration. This is a security risk.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/MultiHttpSecurityConfig.java#L47'>src/main/java/hawk/MultiHttpSecurityConfig.java#L47</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.audit.spring-csrf-disabled.spring-csrf-disabled'>spring-csrf-disabled</a></td>
+      <td>CSRF protection is disabled for this configuration. This is a security risk.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/MultiHttpSecurityConfig.java#L88'>src/main/java/hawk/MultiHttpSecurityConfig.java#L88</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.audit.spring-csrf-disabled.spring-csrf-disabled'>spring-csrf-disabled</a></td>
+      <td>CSRF protection is disabled for this configuration. This is a security risk.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/java/hawk/MultiHttpSecurityConfig.java#L110'>src/main/java/hawk/MultiHttpSecurityConfig.java#L110</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.no-new-privileges.no-new-privileges'>no-new-privileges</a></td>
+      <td>Service &#39;db&#39; allows for privilege escalation via setuid or setgid binaries. Add &#39;no-new-privileges:true&#39; in &#39;security_opt&#39; to prevent this.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/docker-compose.yml#L3'>docker-compose.yml#L3</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.no-new-privileges.no-new-privileges'>no-new-privileges</a></td>
+      <td>Service &#39;javavulny&#39; allows for privilege escalation via setuid or setgid binaries. Add &#39;no-new-privileges:true&#39; in &#39;security_opt&#39; to prevent this.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/docker-compose.yml#L12'>docker-compose.yml#L12</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service'>writable-filesystem-service</a></td>
+      <td>Service &#39;db&#39; is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add &#39;read_only: true&#39; to this service to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/docker-compose.yml#L3'>docker-compose.yml#L3</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service'>writable-filesystem-service</a></td>
+      <td>Service &#39;javavulny&#39; is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add &#39;read_only: true&#39; to this service to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/docker-compose.yml#L12'>docker-compose.yml#L12</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.github-actions.security.third-party-action-not-pinned-to-commit-sha.third-party-action-not-pinned-to-commit-sha'>third-party-action-not-pinned-to-commit-sha</a></td>
+      <td>An action sourced from a third-party repository on GitHub is not pinned to a full length commit SHA. Pinning an action to a full length commit SHA is currently the only way to use an action as an immutable release. Pinning to a particular SHA helps mitigate the risk of a bad actor adding a backdoor to the action&#39;s repository, as they would need to generate a SHA-1 collision for a valid Git object payload.</td>
+      <td>medium</td>
+      <td>fixed</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/.github/workflows/hawkscan.yml#L23'>.github/workflows/hawkscan.yml#L23</a></td>
+    </tr>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-low"> Findings Summary- LOW Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableLow">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/integration_tests/conf_files/stackhawk-jsv-json-token.yml#L20'>integration_tests/conf_files/stackhawk-jsv-json-token.yml#L20</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/stackhawk-actions.yml#L22'>stackhawk-actions.yml#L22</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/stackhawk.d/stackhawk-auth-form-cookie.yml#L14'>stackhawk.d/stackhawk-auth-form-cookie.yml#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/stackhawk.d/stackhawk-auth-json-token.yml#L14'>stackhawk.d/stackhawk-auth-json-token.yml#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/stackhawk.d/stackhawk-custom-spider-curl.yml#L20'>stackhawk.d/stackhawk-custom-spider-curl.yml#L20</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/stackhawk.d/stackhawk-custom-spider-newman.yml#L20'>stackhawk.d/stackhawk-custom-spider-newman.yml#L20</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/stackhawk.d/stackhawk-jsv-form-cookie.yml#L22'>stackhawk.d/stackhawk-jsv-form-cookie.yml#L22</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/stackhawk.d/stackhawk-jsv-json-token.yml#L19'>stackhawk.d/stackhawk-jsv-json-token.yml#L19</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/stackhawk.d/stackhawk-openapi.yml#L17'>stackhawk.d/stackhawk-openapi.yml#L17</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.hashicorp-tf-password.hashicorp-tf-password'>hashicorp-tf-password</a></td>
+      <td>A gitleaks hashicorp-tf-password was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/stackhawk.yml#L20'>stackhawk.yml#L20</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.gitleaks.private-key.private-key'>private-key</a></td>
+      <td>A gitleaks private-key was detected which attempts to identify hard-coded credentials. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>refs/heads/main</td>
+      <td><a href='https://github.com/Semgrep-Demo/pro-engine-demo/blob/main/src/main/resources/keyStore.pem#L5'>src/main/resources/keyStore.pem#L5</a></td>
+    </tr>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    
+ <div style="page-break-after: always;"></div></body>
+</html>
