@@ -1,3 +1,12 @@
+# Steps:
+# 1. Read findings from SEMGREP using API and write to JSON
+# 2. Convert the json file to pandas dataframe
+# 3. Get the list of all column names from headers  
+# 4. list of columns of interest to include in the report
+# 5. Create a new dataframe with the columns of interest
+# 6. Write the dataframe to excel file
+# 7. Create a HTML report from the dataframe
+
 import getopt
 import requests
 import sys
@@ -14,6 +23,14 @@ import html
 import pdfkit
 import time
 from PyPDF2 import PdfMerger
+import plotly.express as px
+import pandas as pd
+import plotly.graph_objects as go
+from plotly.offline import plot
+import base64
+from io import BytesIO
+
+
 
 try:
     SEMGREP_API_WEB_TOKEN = os.environ["SEMGREP_API_WEB_TOKEN"]
@@ -69,9 +86,6 @@ def get_projects(slug_name, interesting_tag):
     summary_file = "summary-" + EPOCH_TIME +  ".html"
     summary_file_path = os.path.join(folder_path, summary_file)
 
-    # add_summary_table_and_save_as_html(severity_and_state_counts_all_repos, summary_file_path)
-
-    # Example usage
     logging.info (f"starting process to combine HTML files")
     output_filename = f'combined_output_{interesting_tag}.html'  # The name of the output file
     combine_html_files(severity_and_state_counts_all_repos, output_filename, output_pdf_filename)
@@ -105,7 +119,7 @@ def get_findings_per_repo(slug_name, repo):
     if len(data) == 0:
         logging.info(f"No SAST findings in repo - {repo}")
     else:
-        # calcuate severity data
+        # calculate severity data
         severity_and_state_counts = count_severity_and_state(data)
         severity_and_state_counts_all_repos.append({repo : severity_and_state_counts})
 
@@ -211,11 +225,238 @@ def add_summary_table_and_save_as_html(data, output_filename):
     html_table = df.to_html(index=False)
 
     # Save the HTML table to a file
-    # file_path = 'combined_html_table.html'  # Specify your file name here
     with open(output_filename, 'w') as file:
         file.write(html_table)
+    logging.debug(f"HTML table saved to {output_filename}")
 
-    print(f"HTML table saved to {output_filename}")
+def create_bar_graph_open_vulns(data, image_folder):
+    rows = []
+    for entry in data:
+        for project_name, severities in entry.items():
+            row = {}
+            row ['Project'] = project_name
+            for severity, states in severities.items():
+                if (severity== 'high'):
+                    row ['high'] = states['unresolved']
+                if (severity== 'medium'):
+                    row ['medium'] = states['unresolved']
+                if (severity== 'low'):
+                    row ['low'] = states['unresolved']
+            print(row)
+            rows.append(row)
+
+    transformed_json = {
+        'Project': [],
+        'high': [],
+        'medium': [],
+        'low': [],
+    }
+
+    logging.debug(f"rows is {rows}")
+    # Populate the new structure
+    for item in rows:
+        for key in transformed_json:
+            logging.debug(f"item is {item}")
+            logging.debug(f"key is {key}")
+            logging.debug(f"item[key] is {item[key]}")
+            transformed_json[key].append(item[key])
+
+    logging.debug(transformed_json)
+    
+    # Create a DataFrame from the rows
+    df = pd.DataFrame(rows)
+
+    logging.debug(df)
+
+    # Sorting the DataFrame by 'Subcolumn1' in descending order and selecting the top 10
+    df = df.sort_values(by='high', ascending=False).head(15)
+
+    # Melting the DataFrame to long format, which Plotly can use to differentiate subcolumns
+    df_long = pd.melt(df, id_vars='Project', value_vars=['high', 'medium', 'low'], 
+                    var_name='Severity', value_name='Value')
+
+    # Adding a column for text to display the value on all bars
+    df_long['Text'] = df_long['Value'].apply(lambda x: f'{x}')
+
+    color_map = {
+        'high': 'darkred',          # Dark Red
+        'medium': 'darkorange',     # Dark Orange
+        'low': 'darkgoldenrod'      # Dark Yellow
+    }
+
+    # Create a bar graph with subcolumns for the top 10 objects
+    fig = px.bar(df_long, x='Project', y='Value', color='Severity', barmode='group',
+                color_discrete_map=color_map, text='Text', 
+                title='Top 15 Repos by High Severity Open Vulnerabilities count')
+
+    fig.update_traces(texttemplate='%{text}', textposition='outside')
+
+    # Update the layout for axis titles
+    fig.update_layout(
+        xaxis_title='Project Name',
+        yaxis_title='Number of Vulnerabilities'
+    )
+    
+    graph_div = plot(fig, output_type='div', include_plotlyjs=False)
+
+    # Show the plot
+    # fig.show()
+    fig.write_image(f"{image_folder}/open.png")
+    return(graph_div)
+
+def create_bar_graph_fixed_vulns(data, image_folder):
+    rows = []
+    for entry in data:
+        for project_name, severities in entry.items():
+            row = {}
+            row ['Project'] = project_name
+            for severity, states in severities.items():
+                if (severity== 'high'):
+                    row ['high'] = states['fixed']
+                if (severity== 'medium'):
+                    row ['medium'] = states['fixed']
+                if (severity== 'low'):
+                    row ['low'] = states['fixed']
+            print(row)
+            rows.append(row)
+
+    transformed_json = {
+        'Project': [],
+        'high': [],
+        'medium': [],
+        'low': [],
+    }
+
+    logging.debug(f"rows is {rows}")
+    # Populate the new structure
+    for item in rows:
+        for key in transformed_json:
+            logging.debug(f"item is {item}")
+            logging.debug(f"key is {key}")
+            logging.debug(f"item[key] is {item[key]}")
+            transformed_json[key].append(item[key])
+
+    logging.debug(transformed_json)
+    
+    # Create a DataFrame from the rows
+    df = pd.DataFrame(rows)
+
+    logging.debug(df)
+
+    # Sorting the DataFrame by 'high' in descending order and selecting the top 10
+    df = df.sort_values(by='high', ascending=False).head(15)
+
+    # Melting the DataFrame to long format, which Plotly can use to differentiate subcolumns
+    df_long = pd.melt(df, id_vars='Project', value_vars=['high', 'medium', 'low'], 
+                    var_name='Severity', value_name='Value')
+
+    # Adding a column for text to display the value on all bars
+    df_long['Text'] = df_long['Value'].apply(lambda x: f'{x}')
+
+    color_map = {
+        'high': 'darkred',          # Dark Red
+        'medium': 'darkorange',     # Dark Orange
+        'low': 'darkgoldenrod'      # Dark Yellow
+    }
+
+    # Create a bar graph with subcolumns for the top 10 objects
+    fig = px.bar(df_long, x='Project', y='Value', color='Severity', barmode='group',
+                color_discrete_map=color_map, text='Text', 
+                title='Top 15 Repos by High Severity Fixed Vulnerabilities count')
+
+    fig.update_traces(texttemplate='%{text}', textposition='outside')
+
+    # Update the layout for axis titles
+    fig.update_layout(
+        xaxis_title='Project Name',
+        yaxis_title='Number of Vulnerabilities'
+    )
+
+    graph_div = plot(fig, output_type='div', include_plotlyjs=False)
+
+    # Show the plot
+    # fig.show()
+    fig.write_image(f"{image_folder}/fixed.png")
+
+    return(graph_div)
+
+def assign_security_grade(high, medium, low):
+    """
+    Assigns a security grade based on the number of high, medium, and low vulnerabilities.
+
+    :param high: Number of high vulnerabilities.
+    :param medium: Number of medium vulnerabilities.
+    :param low: Number of low vulnerabilities (currently not used in grading logic).
+    :return: Security grade as a string (A, B, C, or D).
+    """
+    # Criteria for grade A
+    if high == 0 and medium < 10:
+        return 'A'
+    # Criteria for grade B
+    elif high < 5 and medium < 25:
+        return 'B'
+    # Criteria for grade C
+    elif high < 10 and medium < 50:
+        return 'C'
+    # Criteria for grade D
+    elif high < 25 and medium < 100:
+        return 'D'
+    # If none of the above criteria are met, the security grade is considered to be below D.
+    else:
+        return 'F'
+
+def generate_table_rows(df):
+    """
+    Generates HTML table rows (<tr>) for a DataFrame, including a header row.
+    Each 'Security Grade' cell gets colored based on its value, and certain columns are centered.
+    
+    :param df: DataFrame with columns including 'Project Name', 'Security Grade', etc.
+    :return: String with HTML content for table rows.
+    """
+    # Define headers
+    headers = [
+        "Project", " ", "Security Grade", "  ", 
+        "Open-HIGH", "Open-MEDIUM", "Open-LOW", "   ", 
+        "Fixed-HIGH", "Fixed-MEDIUM", "Fixed-LOW"
+    ]
+    
+    # Columns to center
+    center_columns = ["Security Grade", "Open-HIGH", "Open-MEDIUM", "Open-LOW", "Fixed-HIGH", "Fixed-MEDIUM", "Fixed-LOW"]
+
+    # Generate HTML for the header row with center-text class for specific headers
+    header_html = "<tr>" + "".join([f'<th class="{"center-text" if header in center_columns else ""}">{header}</th>' for header in headers]) + "</tr>"
+    
+    # Initialize HTML rows string with the header
+    html_rows = header_html
+    
+    for index, row in df.iterrows():
+        security_grade = row['Security Grade']
+        
+        # Determine class based on 'Security Grade'
+        class_name = ""
+        if security_grade == "A":
+            class_name = "grade-A"
+        elif security_grade == "B":
+            class_name = "grade-B"
+        elif security_grade == "C":
+            class_name = "grade-C"
+        elif security_grade == "D":
+            class_name = "grade-D"
+        elif security_grade == "F":
+            class_name = "grade-F"
+        
+        # Generate HTML for one row
+        row_html = "<tr>"
+        for col, header in zip(df.columns, headers):
+            cell_class = "center-text" if header in center_columns else ""
+            if header == "Security Grade":
+                cell_class += f" {class_name}"  # Add security grade class if applicable
+            row_html += f'<td class="{cell_class.strip()}">{row[col]}</td>'
+        row_html += "</tr>"
+        
+        html_rows += row_html
+    return html_rows
+
 
 def combine_html_files(data, output_filename, output_pdf_filename):
 
@@ -224,32 +465,39 @@ def combine_html_files(data, output_filename, output_pdf_filename):
     for entry in data:
         for project_name, severities in entry.items():
             row = {
-                    'Project Name': project_name
+                    'Project Name': project_name,
+                    ' ': '   ',
+                    'Security Grade': '',
+                    '  ': '    ',
+                    'Open/High': 0,
+                    'Open/Medium': 0,
+                    'Open/Low': 0,
+                    '   ': '   ',
+                    'Fixed/High': 0,
+                    'Fixed/Medium': 0,
+                    'Fixed/Low': 0,
             }
             for severity, states in severities.items():
                 if severity == 'high':
-                    row['High/Ignored'] = states['muted']
-                    row['High/Fixed'] = states['fixed']
-                    row['High/Removed'] = states['removed']
-                    row['High/Open'] = states['unresolved']
+                    row['Fixed/High'] = states['fixed']
+                    row['Open/High'] = states['unresolved']               
                 if severity == 'medium':
-                    row['Medium/Ignored'] = states['muted']
-                    row['Medium/Fixed'] = states['fixed']
-                    row['Medium/Removed'] = states['removed']
-                    row['Medium/Open'] = states['unresolved']
+                    row['Fixed/Medium'] = states['fixed']
+                    row['Open/Medium'] = states['unresolved']
                 if severity == 'low':
-                    row['Low/Ignored'] = states['muted']
-                    row['Low/Fixed'] = states['fixed']
-                    row['Low/Removed'] = states['removed']
-                    row['Low/Open'] = states['unresolved']
-            print (row)
+                    row['Fixed/Low'] = states['fixed']
+                    row['Open/Low'] = states['unresolved']
+            row['Security Grade'] = assign_security_grade(row['Open/High'], row['Open/Medium'], row['Open/Low'])
             rows.append(row)
 
     # Create a DataFrame from the rows
     df = pd.DataFrame(rows)
 
-    # Convert the DataFrame to an HTML table string
-    html_summary_table = df.to_html(index=False)
+    # Sorting the DataFrame by 'Open/High' in descending order and selecting the top 10
+    df = df.sort_values(by='Open/High', ascending=False)
+
+    html_summary_table_content = generate_table_rows(df)
+    html_summary_table = f"<table id='myDataTable' class='my_table'>{html_summary_table_content}</table>"
 
     # create folder reports/EPOCH_TIME
     folder_path = os.path.join(os.getcwd(), "reports", EPOCH_TIME)  # Define the output path
@@ -261,13 +509,35 @@ def combine_html_files(data, output_filename, output_pdf_filename):
     # Format the date and time
     formatted_now = now.strftime("%Y-%m-%d %H:%M")
 
-    # Print the formatted date and time
-    # logging.debug("Current date and time:", str(formatted_now))
+    graph_div_open_vulns = create_bar_graph_open_vulns(data, folder_path)
+
+    graph_div_fixed_vulns = create_bar_graph_fixed_vulns(data, folder_path)
+
+    relative_path_open = 'open.png'  # This is your relative path
+    absolute_path_open = os.path.join(os.getcwd(), "reports", EPOCH_TIME, relative_path_open) 
+
+    relative_path_fixed = 'fixed.png'  # This is your relative path
+    absolute_path_fixed = os.path.join(os.getcwd(), "reports", EPOCH_TIME, relative_path_fixed) 
+
+    logging.debug(f"absolute_path_open= {absolute_path_open}")
+    logging.debug(f"absolute_path_fixed= {absolute_path_fixed}")
 
     combined_html = f"""
     <html>
     <head>
     <title> Semgrep SAST Scan Report for All Repository with tag {interesting_tag} </title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+    .container-table {{
+        display: grid; /* Use CSS Grid */
+        place-items: center; /* Center both horizontally and vertically */
+    }}
+    </style>
+    <style>
+    .center-text {{
+        text-align: center; 
+    }}
+    </style>
     <style>
     .my_table {{
         width: 100%;
@@ -280,10 +550,6 @@ def combine_html_files(data, output_filename, output_pdf_filename):
     }}
     .my_table th {{
         background-color: #f2f2f2;
-    }}
-    /* Example of setting specific column widths */
-    .my_table td:nth-of-type(1) {{ /* Targeting first column */
-        width: 40% !important;
     }}
     </style>
     <style>
@@ -318,10 +584,36 @@ def combine_html_files(data, output_filename, output_pdf_filename):
             background-color: #f2f2f2;
         }}
     </style>
+    <style>
+        .grade-A {{
+            background-color: green;
+            color: white; /* For better readability */
+        }}
+        .grade-B {{
+            background-color: yellow;
+            color: black; /* Adjust color for readability */
+        }}
+        .grade-C {{
+            background-color: orange;
+            color: white;
+        }}
+        .grade-D {{
+            background-color: red;
+            color: white;
+        }}
+        .grade-F {{
+            background-color: darkred;
+            color: white;
+        }}
+        /* Add more classes if needed */
+    </style>
+
 
     </head>
     <header>
         <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     </header>
     <body>
     <div style="height: 75px;"></div> <!-- Creates 75px of vertical space -->
@@ -341,10 +633,38 @@ def combine_html_files(data, output_filename, output_pdf_filename):
     <div style="page-break-after: always;"></div>
 
     <div class="heading">
-    <h2> <p id="html_summary_table"> Findings Summary </p> </h2>
+    <h2> <p style="text-align: center;" id="html_summary_table"> Findings Summary </p> </h2>
     </div>
-    <div class="container" class="centered-table">
-        {html_summary_table}
+    <div class="container-table centered-table">
+        <table id="myTable" class="my_table">
+            {html_summary_table}
+        </table>
+    </div>
+
+    <script>
+    $(document).ready(function () {{
+        $('#myTable').DataTable({{
+        }});
+    }});
+    </script>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="bar_graph_open_vulns"> Top 15 Projects with High Severity Open Vulnerability Count  </p> </h2>
+    <div style="height: 75px;"></div> <!-- Creates 75px of vertical space -->
+    <div class="container">
+        <img src="{absolute_path_open}" alt="open_vulns" id="myImage">
+    </div>
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="bar_graph_fixed_vulns"> Top 15 Projects with High Severity Fixed Vulnerability Count  </p> </h2>
+    </div>
+
+    <div style="height: 75px;"></div> <!-- Creates 75px of vertical space -->
+    <div class="container">
+        <img src="{absolute_path_fixed}" alt="fixed_vulns" id="myImage">
     </div>
 
     <div style="page-break-after: always;"></div>"""
@@ -371,7 +691,8 @@ def combine_html_files(data, output_filename, output_pdf_filename):
 
     # convert from HTML to PDF
     options = {
-        'orientation': 'Landscape'
+        'orientation': 'Landscape',
+        'enable-local-file-access': None
     }
     pdfkit.from_string(combined_html, os.path.join(folder_path, output_pdf_filename), options=options)
 
@@ -404,11 +725,6 @@ def json_to_df(json_file):
 
     # filter out only specific columns
     df = df.loc[:, [ 'Finding Title', 'Finding Description & Remediation', 'state', 'First Seen', 'severity', 'confidence',  'triage_state', 'triaged_at', 'triage_comment', 'state_updated_at', 'repository',  'location' ]] 
-    # df = df.loc[:, [ 'state', 'repository', 'first_seen_scan_id', 'triage_state', 'severity', 'confidence', 'relevant_since', 'rule_name', 'rule_message', 'location',	'triaged_at', 'triage_comment', 'state_updated_at']] 
-    # 'state', 'repository', 'first_seen_scan_id', 'triage_state', 'severity', 'confidence', 'relevant_since', 'rule_name', 'rule_message', 'location',	'triaged_at', 'triage_comment', 'state_updated_at'
-    # update column to datetime format
-    # df['first_seen_scan_id'] = pd.to_datetime(df['first_seen_scan_id'], format='%H-%M--%d-%b-%Y')
-
     logging.info("Findings converted to DF from JSON file : " + json_file)
 
     return df
@@ -418,9 +734,7 @@ def json_to_df_html(json_file):
         data = json.load(json_file_data)
         logging.debug(data)
 
-    # df = pd.DataFrame(data['results'])
     df = json_normalize(data)
-
     return df
 
 def json_to_csv_pandas(json_file, csv_file):
@@ -437,9 +751,6 @@ def json_to_csv_pandas(json_file, csv_file):
 def json_to_xlsx_pandas(json_file, xlsx_file):
 
     df = json_to_df(json_file)
-
-    # Write the DataFrame to CSV
-    # df.to_excel(xlsx_file, index=False)
 
     writer = pd.ExcelWriter(xlsx_file, engine='xlsxwriter', datetime_format="mmm d yyyy hh:mm") 
     df.to_excel(writer, sheet_name='Findings', index=False)
@@ -474,14 +785,6 @@ def json_to_xlsx_pandas(json_file, xlsx_file):
     cell_format_datetime = workbook.add_format()
     cell_format_datetime.set_num_format('dd/mm/yyyy hh:mm AM/PM')
     worksheet.set_column('D:D', 30, cell_format_datetime)
-
-    # # Add some cell formats.
-    # datatime_format = workbook.add_format({'datetime_format': 'mmm d yyyy hh:mm'})
-
-    
-    
-    # # Set the column width and format.
-    # worksheet.set_column(4, 4, 30, datatime_format)
     
     writer.close()
 
@@ -720,12 +1023,6 @@ def process_sast_findings(df: pd.DataFrame, html_filename, pdf_filename, repo_na
 
     START_ROW = 0
     df_red = df[interesting_columns_sast]
-    # df_red = df
-
-    # # replace severity values ERROR = HIGH, WARNING = MEDIUM, INFO = LOW 
-    # df_red = df_red.replace('ERROR', 'HIGH', regex=True)
-    # df_red = df_red.replace('WARNING', 'MEDIUM', regex=True)
-    # df_red = df_red.replace('INFO', 'LOW', regex=True)
 
     # Apply the function and create a new column
     df_red['Finding Description & Remediation'] = df_red.apply(escape_html_description, axis=1)
@@ -798,9 +1095,6 @@ def process_sast_findings(df: pd.DataFrame, html_filename, pdf_filename, repo_na
     # generate the HTML from the dataframe
     html = generate_html_sast(df_high, df_med, df_low, repo_name)
     
-    # create filename for HTML report
-    # html_filename = f"{reportname}.html"
-
     # write the HTML content to an HTML file
     open(html_filename, "w").write(html)
 
