@@ -1,12 +1,3 @@
-# Steps:
-# 1. Read findings from SEMGREP using API and write to JSON
-# 2. Convert the json file to pandas dataframe
-# 3. Get the list of all column names from headers  
-# 4. list of columns of interest to include in the report
-# 5. Create a new dataframe with the columns of interest
-# 6. Write the dataframe to excel file
-# 7. Create a HTML report from the dataframe
-
 import getopt
 import requests
 import sys
@@ -624,16 +615,10 @@ def combine_html_files(data, output_filename, output_pdf_filename):
     <h1> <p style="text-align: center;" id="sast"> Semgrep SAST Scan Report for All Repositories with tag {interesting_tag} </p> </h1>
     <h2> <p style="text-align: center;" id="reporttime"> Report Generated at {formatted_now}</p> </h2>
     </div>
-    <div style="height: 40px;"></div> <!-- Creates 50px of vertical space -->
-    <div class="topnav">
-    <h2> <p style="text-align: center;" id="sast-summary"> SAST Scan Summary </p> </h2>
-
-    </div>
-
     <div style="page-break-after: always;"></div>
 
     <div class="heading">
-    <h2> <p style="text-align: center;" id="html_summary_table"> Findings Summary </p> </h2>
+    <h2> <p style="text-align: center;" id="html_summary_table"> SAST Findings Summary </p> </h2>
     </div>
     <div class="container-table centered-table">
         <table id="myTable" class="my_table">
