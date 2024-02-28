@@ -1,0 +1,440 @@
+
+    <html>
+    <head>
+    <title> Semgrep SAST Scan Report for Repository: nnayar-r2c/new-vulnado </title>
+    <style>
+    .my_table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .my_table th, .my_table td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+    .my_table th {
+        background-color: #f2f2f2;
+    }
+    /* Example of setting specific column widths */
+    .my_table td:nth-of-type(1) { /* Targeting first column */
+        width: 20% !important;
+    }
+    .my_table td:nth-of-type(2) { /* Targeting second column */
+        width: 30% !important;
+    }
+    .my_table td:nth-of-type(3) { /* Targeting third column */
+        width: 10% !important;
+    }
+    .my_table td:nth-of-type(4) { /* Targeting fourth column */
+        width: 10% !important;
+    }
+    .my_table td:nth-of-type(5) { /* Targeting fifth column */
+        width: 15% !important;
+    }
+    .my_table td:nth-of-type(6) { /* Targeting sixth column */
+        width: 15% !important;
+    }
+    </style>
+    <style>
+        #myImage {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%; /* or any desired width */
+            height: auto; /* to maintain the aspect ratio */
+        }
+    </style>
+    <style>
+        .centered-table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    </head>
+    <header>
+        <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    </header>
+    <body>
+    <div style="height: 75px;"></div> <!-- Creates 75px of vertical space -->
+    <div class="container">
+    <img src="https://i.ibb.co/8xyV6WJ/Semgrep-logo.png" alt="logo" id="myImage">
+    </div>
+    <div class="container">
+    <h1> <p style="text-align: center;" id="sast"> Semgrep SAST Scan Report for Repository: nnayar-r2c/new-vulnado </p> </h1>
+    <h2> <p style="text-align: center;" id="reporttime"> Report Generated at 2024-02-28 09:28 </p> </h2>
+    </div>
+    <div style="height: 40px;"></div> <!-- Creates 50px of vertical space -->
+    <div class="topnav">
+    <h2> <p style="text-align: center;" id="sast-summary"> SAST Scan Summary </p> </h2>
+
+    <table border="1" class="centered-table"> <!-- Added border for visibility -->
+        <!-- Table Header -->
+        <tr>
+            <th>Vulnerability Severity</th>
+            <th>Vulnerability Count</th>
+        </tr>
+
+        <!-- Table Rows and Data Cells -->
+        <tr>
+            <td><a href="#sast-high"> Findings- SAST High Severity </a> </td>
+            <td> 7 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-med"> Findings- SAST Medium Severity </a> </td>
+            <td> 25 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-low"> Findings- SAST Low Severity </a> </td>
+            <td> 0 </td>
+        </tr>
+    </table>
+
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-high"> Findings Summary- HIGH Severity </p> </h2>
+    </div>
+    <div class="container">
+        <table border="1" class="dataframe my_table" id="tableHigh">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-jwt-token.detected-jwt-token'>detected-jwt-token</a></td>
+      <td>JWT token detected</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/exercises/02-xss.md#L65'>exercises/02-xss.md#L65</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.command-injection-process-builder.command-injection-process-builder'>command-injection-process-builder</a></td>
+      <td>A formatted or concatenated string was detected as input to a ProcessBuilder call. This is dangerous if a variable is controlled by user input and could result in a command injection. Ensure your variables are not controlled by users or sufficiently sanitized.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/Cowsay.java#L11'>src/main/java/com/scalesec/vulnado/Cowsay.java#L11</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.formatted-sql-string.formatted-sql-string'>formatted-sql-string</a></td>
+      <td>Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using &#39;connection.prepareStatement&#39;.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/User.java#L49'>src/main/java/com/scalesec/vulnado/User.java#L49</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.audit.xss.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L63'>client/index.html#L63</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.audit.xss.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L67'>client/index.html#L67</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.audit.xss.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L67'>client/index.html#L67</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.audit.xss.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L73'>client/index.html#L73</a></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-med"> Findings Summary- MEDIUM Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableMedium">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=terraform.aws.security.aws-subnet-has-public-ip-address.aws-subnet-has-public-ip-address'>aws-subnet-has-public-ip-address</a></td>
+      <td>Resources in the AWS subnet are assigned a public IP address. Resources should not be exposed on the public internet, but should have access limited to consumers required for the function of your application. Set `map_public_ip_on_launch` to false so that resources are not publicly-accessible.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/reverse_shell/main.tf#L33'>reverse_shell/main.tf#L33</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.html-templates.security.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L63'>client/index.html#L63</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.html-templates.security.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L67'>client/index.html#L67</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.html-templates.security.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L67'>client/index.html#L67</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.html-templates.security.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L73'>client/index.html#L73</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=html.security.audit.missing-integrity.missing-integrity'>missing-integrity</a></td>
+      <td>This tag is missing an &#39;integrity&#39; subresource integrity attribute. The &#39;integrity&#39; attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you’re telling the browser to fetch in the &#39;integrity&#39; attribute for all externally hosted files.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L57'>client/index.html#L57</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=html.security.audit.missing-integrity.missing-integrity'>missing-integrity</a></td>
+      <td>This tag is missing an &#39;integrity&#39; subresource integrity attribute. The &#39;integrity&#39; attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you’re telling the browser to fetch in the &#39;integrity&#39; attribute for all externally hosted files.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L60'>client/index.html#L60</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=html.security.audit.missing-integrity.missing-integrity'>missing-integrity</a></td>
+      <td>This tag is missing an &#39;integrity&#39; subresource integrity attribute. The &#39;integrity&#39; attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you’re telling the browser to fetch in the &#39;integrity&#39; attribute for all externally hosted files.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/login.html#L40'>client/login.html#L40</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=html.security.audit.missing-integrity.missing-integrity'>missing-integrity</a></td>
+      <td>This tag is missing an &#39;integrity&#39; subresource integrity attribute. The &#39;integrity&#39; attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you’re telling the browser to fetch in the &#39;integrity&#39; attribute for all externally hosted files.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/login.html#L43'>client/login.html#L43</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace'>active-debug-code-printstacktrace</a></td>
+      <td>Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/Comment.java#L55'>src/main/java/com/scalesec/vulnado/Comment.java#L55</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace'>active-debug-code-printstacktrace</a></td>
+      <td>Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/Comment.java#L70'>src/main/java/com/scalesec/vulnado/Comment.java#L70</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace'>active-debug-code-printstacktrace</a></td>
+      <td>Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/Cowsay.java#L24'>src/main/java/com/scalesec/vulnado/Cowsay.java#L24</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace'>active-debug-code-printstacktrace</a></td>
+      <td>Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/Postgres.java#L25'>src/main/java/com/scalesec/vulnado/Postgres.java#L25</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace'>active-debug-code-printstacktrace</a></td>
+      <td>Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/Postgres.java#L100'>src/main/java/com/scalesec/vulnado/Postgres.java#L100</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace'>active-debug-code-printstacktrace</a></td>
+      <td>Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/Postgres.java#L114'>src/main/java/com/scalesec/vulnado/Postgres.java#L114</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace'>active-debug-code-printstacktrace</a></td>
+      <td>Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/User.java#L34'>src/main/java/com/scalesec/vulnado/User.java#L34</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace'>active-debug-code-printstacktrace</a></td>
+      <td>Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/User.java#L58'>src/main/java/com/scalesec/vulnado/User.java#L58</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.crypto.use-of-md5.use-of-md5'>use-of-md5</a></td>
+      <td>Detected MD5 hash algorithm which is considered insecure. MD5 is not collision resistant and is therefore not suitable as a cryptographic signature. Use HMAC instead.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/Postgres.java#L67'>src/main/java/com/scalesec/vulnado/Postgres.java#L67</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.sqli.jdbc-sqli.jdbc-sqli'>jdbc-sqli</a></td>
+      <td>Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using &#39;connection.prepareStatement&#39;.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/User.java#L49'>src/main/java/com/scalesec/vulnado/User.java#L49</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.unrestricted-request-mapping.unrestricted-request-mapping'>unrestricted-request-mapping</a></td>
+      <td>Detected a method annotated with &#39;RequestMapping&#39; that does not specify the HTTP method. CSRF protections are not enabled for GET, HEAD, TRACE, or OPTIONS, and by default all HTTP methods are allowed when the HTTP method is not explicitly specified. This means that a method that performs state changes could be vulnerable to CSRF attacks. To mitigate, add the &#39;method&#39; field and specify the HTTP method (such as &#39;RequestMethod.POST&#39;).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/CowController.java#L11'>src/main/java/com/scalesec/vulnado/CowController.java#L11</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.unrestricted-request-mapping.unrestricted-request-mapping'>unrestricted-request-mapping</a></td>
+      <td>Detected a method annotated with &#39;RequestMapping&#39; that does not specify the HTTP method. CSRF protections are not enabled for GET, HEAD, TRACE, or OPTIONS, and by default all HTTP methods are allowed when the HTTP method is not explicitly specified. This means that a method that performs state changes could be vulnerable to CSRF attacks. To mitigate, add the &#39;method&#39; field and specify the HTTP method (such as &#39;RequestMethod.POST&#39;).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/LinksController.java#L15'>src/main/java/com/scalesec/vulnado/LinksController.java#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.unrestricted-request-mapping.unrestricted-request-mapping'>unrestricted-request-mapping</a></td>
+      <td>Detected a method annotated with &#39;RequestMapping&#39; that does not specify the HTTP method. CSRF protections are not enabled for GET, HEAD, TRACE, or OPTIONS, and by default all HTTP methods are allowed when the HTTP method is not explicitly specified. This means that a method that performs state changes could be vulnerable to CSRF attacks. To mitigate, add the &#39;method&#39; field and specify the HTTP method (such as &#39;RequestMethod.POST&#39;).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/src/main/java/com/scalesec/vulnado/LinksController.java#L19'>src/main/java/com/scalesec/vulnado/LinksController.java#L19</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.xss.mustache.explicit-unescape.template-explicit-unescape'>template-explicit-unescape</a></td>
+      <td>Detected an explicit unescape in a Mustache template, using triple braces &#39;{{{...}}}&#39; or ampersand &#39;&amp;&#39;. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/client/index.html#L73'>client/index.html#L73</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.no-new-privileges.no-new-privileges'>no-new-privileges</a></td>
+      <td>Service &#39;db&#39; allows for privilege escalation via setuid or setgid binaries. Add &#39;no-new-privileges:true&#39; in &#39;security_opt&#39; to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/docker-compose.yml#L23'>docker-compose.yml#L23</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service'>writable-filesystem-service</a></td>
+      <td>Service &#39;db&#39; is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add &#39;read_only: true&#39; to this service to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/new-vulnado/blob/master/docker-compose.yml#L23'>docker-compose.yml#L23</a></td>
+    </tr>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-low"> Findings Summary- LOW Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableLow">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    </body>
+    </html>
+    

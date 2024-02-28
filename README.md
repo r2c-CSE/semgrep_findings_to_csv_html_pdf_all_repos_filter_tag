@@ -4,6 +4,10 @@
 
 This script automates the process of generating Security Static Analysis (SAST) reports for projects managed under a specified organization in Semgrep. It fetches project data, analyzes security findings, and compiles detailed reports in various formats including JSON, CSV, XLSX, HTML, and PDF. The script supports filtering findings based on severity and allows for comprehensive reporting by combining individual project findings into a single overview.
 
+[Example PDF Report](https://github.com/r2c-CSE/semgrep_findings_to_csv_html_pdf_all_repos_filter_tag/blob/FR-security_grades_bar_graphs/reports/1709112459/combined_output_portfolio-B.pdf)
+
+[Example HTML Report](https://github.com/r2c-CSE/semgrep_findings_to_csv_html_pdf_all_repos_filter_tag/blob/FR-security_grades_bar_graphs/reports/1709112459/combined_output_portfolio-B.html)
+
 ## Features
 
 - Fetch projects and findings from Semgrep based on organizational slug and specific tags.
@@ -11,11 +15,14 @@ This script automates the process of generating Security Static Analysis (SAST) 
 - Combine reports from multiple projects into a single comprehensive report.
 - Filter findings based on severity to focus on the most critical issues.
 - Automated report generation with timestamping for historical tracking.
+- [NEW] Provides a security grade to each repository based on number of High, Medium and Low `Open` vulnerabilities found
+- [NEW] Create a bar graph showing the top 15 repos by number of High, Medium and Low `Open` vulnerabilities 
+- [NEW] Create a bar graph showing the top 15 repos by number of High, Medium and Low `Fixed` vulnerabilities
 
 ## Prerequisites
 
 - Python 3.x
-- `requests`, `pandas`, `fpdf`, `html`, `pdfkit`, `PyPDF2` Python packages
+- `requests`, `pandas`, `fpdf`, `html`, `pdfkit`, `PyPDF2`, `plotly` Python packages
 - A valid Semgrep API web token set as an environment variable `SEMGREP_API_WEB_TOKEN`
 - Access to Semgrep projects and deployments
 
@@ -24,7 +31,8 @@ This script automates the process of generating Security Static Analysis (SAST) 
 1. Ensure Python 3 and pip are installed.
 2. Install the required Python packages:
 
-`pip install requests pandas fpdf pdfkit PyPDF2`
+`pip install pandas requests fpdf pdfkit PyPDF2 plotly`
+
 
 ## Configuration
 Before running the script, you must set up the `SEMGREP_API_WEB_TOKEN` environment variable with your Semgrep API token:
