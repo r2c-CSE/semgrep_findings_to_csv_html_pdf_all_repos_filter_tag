@@ -1,0 +1,392 @@
+
+    <html>
+    <head>
+    <title> Semgrep SAST Scan Report for Repository: mojito </title>
+    <style>
+    .my_table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .my_table th, .my_table td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+    .my_table th {
+        background-color: #f2f2f2;
+    }
+    /* Example of setting specific column widths */
+    .my_table td:nth-of-type(1) { /* Targeting first column */
+        width: 20% !important;
+    }
+    .my_table td:nth-of-type(2) { /* Targeting second column */
+        width: 30% !important;
+    }
+    .my_table td:nth-of-type(3) { /* Targeting third column */
+        width: 10% !important;
+    }
+    .my_table td:nth-of-type(4) { /* Targeting fourth column */
+        width: 10% !important;
+    }
+    .my_table td:nth-of-type(5) { /* Targeting fifth column */
+        width: 15% !important;
+    }
+    .my_table td:nth-of-type(6) { /* Targeting sixth column */
+        width: 15% !important;
+    }
+    </style>
+    <style>
+        #myImage {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%; /* or any desired width */
+            height: auto; /* to maintain the aspect ratio */
+        }
+    </style>
+    <style>
+        .centered-table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    </head>
+    <header>
+        <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    </header>
+    <body>
+    <div style="height: 75px;"></div> <!-- Creates 75px of vertical space -->
+    <div class="container">
+    <img src="https://i.ibb.co/8xyV6WJ/Semgrep-logo.png" alt="logo" id="myImage">
+    </div>
+    <div class="container">
+    <h1> <p style="text-align: center;" id="sast"> Semgrep SAST Scan Report for Repository: mojito </p> </h1>
+    <h2> <p style="text-align: center;" id="reporttime"> Report Generated at 2024-02-28 09:28 </p> </h2>
+    </div>
+    <div style="height: 40px;"></div> <!-- Creates 50px of vertical space -->
+    <div class="topnav">
+    <h2> <p style="text-align: center;" id="sast-summary"> SAST Scan Summary </p> </h2>
+
+    <table border="1" class="centered-table"> <!-- Added border for visibility -->
+        <!-- Table Header -->
+        <tr>
+            <th>Vulnerability Severity</th>
+            <th>Vulnerability Count</th>
+        </tr>
+
+        <!-- Table Rows and Data Cells -->
+        <tr>
+            <td><a href="#sast-high"> Findings- SAST High Severity </a> </td>
+            <td> 11 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-med"> Findings- SAST Medium Severity </a> </td>
+            <td> 14 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-low"> Findings- SAST Low Severity </a> </td>
+            <td> 1 </td>
+        </tr>
+    </table>
+
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-high"> Findings Summary- HIGH Severity </p> </h2>
+    </div>
+    <div class="container">
+        <table border="1" class="dataframe my_table" id="tableHigh">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=dockerfile.security.missing-user-entrypoint.missing-user-entrypoint'>missing-user-entrypoint</a></td>
+      <td>By not specifying a USER, a program in the container may run as &#39;root&#39;. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than &#39;root&#39;.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/docker/Dockerfile#L6'>webapp/src/main/docker/Dockerfile#L6</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.command-injection-process-builder.command-injection-process-builder'>command-injection-process-builder</a></td>
+      <td>A formatted or concatenated string was detected as input to a ProcessBuilder call. This is dangerous if a variable is controlled by user input and could result in a command injection. Ensure your variables are not controlled by users or sufficiently sanitized.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/cli/src/main/java/com/box/l10n/mojito/cli/command/RetryCommand.java#L131'>cli/src/main/java/com/box/l10n/mojito/cli/command/RetryCommand.java#L131</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.command-injection-process-builder.command-injection-process-builder'>command-injection-process-builder</a></td>
+      <td>A formatted or concatenated string was detected as input to a ProcessBuilder call. This is dangerous if a variable is controlled by user input and could result in a command injection. Ensure your variables are not controlled by users or sufficiently sanitized.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/common/src/main/java/com/box/l10n/mojito/shell/Shell.java#L21'>common/src/main/java/com/box/l10n/mojito/shell/Shell.java#L21</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.formatted-sql-string.formatted-sql-string'>formatted-sql-string</a></td>
+      <td>Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using &#39;connection.prepareStatement&#39;.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/java/com/box/l10n/mojito/nativecriteria/JpaQueryProvider.java#L17'>webapp/src/main/java/com/box/l10n/mojito/nativecriteria/JpaQueryProvider.java#L17</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.xxe.documentbuilderfactory-disallow-doctype-decl-missing.documentbuilderfactory-disallow-doctype-decl-missing'>documentbuilderfactory-disallow-doctype-decl-missing</a></td>
+      <td>DOCTYPE declarations are enabled for this DocumentBuilderFactory. This is vulnerable to XML external entity attacks. Disable this by setting the feature &quot;http://apache.org/xml/features/disallow-doctype-decl&quot; to true. Alternatively, allow DOCTYPE declarations and only prohibit external entities declarations. This can be done by setting the features &quot;http://xml.org/sax/features/external-general-entities&quot; and &quot;http://xml.org/sax/features/external-parameter-entities&quot; to false.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/common/src/main/java/com/box/l10n/mojito/okapi/filters/XMLFilter.java#L95'>common/src/main/java/com/box/l10n/mojito/okapi/filters/XMLFilter.java#L95</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.xxe.documentbuilderfactory-disallow-doctype-decl-missing.documentbuilderfactory-disallow-doctype-decl-missing'>documentbuilderfactory-disallow-doctype-decl-missing</a></td>
+      <td>DOCTYPE declarations are enabled for this DocumentBuilderFactory. This is vulnerable to XML external entity attacks. Disable this by setting the feature &quot;http://apache.org/xml/features/disallow-doctype-decl&quot; to true. Alternatively, allow DOCTYPE declarations and only prohibit external entities declarations. This can be done by setting the features &quot;http://xml.org/sax/features/external-general-entities&quot; and &quot;http://xml.org/sax/features/external-parameter-entities&quot; to false.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/java/com/box/l10n/mojito/android/strings/AndroidStringDocumentUtils.java#L15'>webapp/src/main/java/com/box/l10n/mojito/android/strings/AndroidStringDocumentUtils.java#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.servlets.security.crlf-injection-logs-deepsemgrep.crlf-injection-logs-deepsemgrep'>crlf-injection-logs-deepsemgrep</a></td>
+      <td>When data from an untrusted source is put into a logger and not neutralized correctly, an attacker could forge log entries or include malicious content.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/java/com/box/l10n/mojito/security/ShowPageAuthenticationSuccessHandler.java#L30'>webapp/src/main/java/com/box/l10n/mojito/security/ShowPageAuthenticationSuccessHandler.java#L30</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.audit.xss.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/templates/index.html#L8'>webapp/src/main/resources/templates/index.html#L8</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.audit.xss.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/templates/index.html#L9'>webapp/src/main/resources/templates/index.html#L9</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.audit.xss.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/templates/index.html#L15'>webapp/src/main/resources/templates/index.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.audit.xss.var-in-script-tag.var-in-script-tag'>var-in-script-tag</a></td>
+      <td>Detected a template variable used in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent cross-site scripting (XSS) attacks when used directly in JavaScript. If you need this data on the rendered page, consider placing it in the HTML portion (outside of a script tag). Alternatively, use a JavaScript-specific encoder, such as the one available in OWASP ESAPI. For Django, you may also consider using the &#39;json_script&#39; template tag and retrieving the data in your script by using the element ID (e.g., `document.getElementById`).</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/templates/index.html#L16'>webapp/src/main/resources/templates/index.html#L16</a></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-med"> Findings Summary- MEDIUM Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableMedium">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.unsafe-reflection.unsafe-reflection'>unsafe-reflection</a></td>
+      <td>If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/cli/src/main/java/com/box/l10n/mojito/cli/command/checks/AbstractCliChecker.java#L16'>cli/src/main/java/com/box/l10n/mojito/cli/command/checks/AbstractCliChecker.java#L16</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.unsafe-reflection.unsafe-reflection'>unsafe-reflection</a></td>
+      <td>If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/java/com/box/l10n/mojito/service/assetintegritychecker/integritychecker/IntegrityCheckerFactory.java#L84'>webapp/src/main/java/com/box/l10n/mojito/service/assetintegritychecker/integritychecker/IntegrityCheckerFactory.java#L84</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.unsafe-reflection.unsafe-reflection'>unsafe-reflection</a></td>
+      <td>If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/java/com/box/l10n/mojito/service/drop/exporter/DropExporterService.java#L87'>webapp/src/main/java/com/box/l10n/mojito/service/drop/exporter/DropExporterService.java#L87</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.unvalidated-redirect.unvalidated-redirect'>unvalidated-redirect</a></td>
+      <td>Application redirects to a destination URL specified by a user-supplied parameter that is not validated. This could direct users to malicious locations. Consider using an allowlist to validate URLs.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/java/com/box/l10n/mojito/rest/cli/CliWS.java#L52'>webapp/src/main/java/com/box/l10n/mojito/rest/cli/CliWS.java#L52</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.unrestricted-request-mapping.unrestricted-request-mapping'>unrestricted-request-mapping</a></td>
+      <td>Detected a method annotated with &#39;RequestMapping&#39; that does not specify the HTTP method. CSRF protections are not enabled for GET, HEAD, TRACE, or OPTIONS, and by default all HTTP methods are allowed when the HTTP method is not explicitly specified. This means that a method that performs state changes could be vulnerable to CSRF attacks. To mitigate, add the &#39;method&#39; field and specify the HTTP method (such as &#39;RequestMethod.POST&#39;).</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/java/com/box/l10n/mojito/react/ReactAppController.java#L58'>webapp/src/main/java/com/box/l10n/mojito/react/ReactAppController.java#L58</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.browser.open-redirect-pathname.open-redirect-pathname'>open-redirect-pathname</a></td>
+      <td>The application builds a URL using user-controlled input which can lead to an open redirect vulnerability. An attacker can manipulate the URL and redirect users to an arbitrary domain. Open redirect vulnerabilities can lead to issues such as Cross-site scripting (XSS) or redirecting to a malicious domain for activities such as phishing to capture users&#39; credentials. To prevent this vulnerability perform strict input validation of the domain against an allowlist of approved domains. Notify a user in your application that they are leaving the website. Display a domain where they are redirected to the user. A user can then either accept or deny the redirect to an untrusted site.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/public/js/app.js#L152'>webapp/src/main/resources/public/js/app.js#L152</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.xss.ejs.var-in-script-src.var-in-script-src'>var-in-script-src</a></td>
+      <td>Detected a template variable used as the &#39;src&#39; in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent malicious URLs from being injected and could results in a cross-site scripting (XSS) vulnerability. Prefer not to dynamically generate the &#39;src&#39; attribute and use static URLs instead. If you must do this, carefully check URLs against an allowlist and be sure to URL-encode the result.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/templates/index.html#L15'>webapp/src/main/resources/templates/index.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.xss.ejs.var-in-script-src.var-in-script-src'>var-in-script-src</a></td>
+      <td>Detected a template variable used as the &#39;src&#39; in a script tag. Although template variables are HTML escaped, HTML escaping does not always prevent malicious URLs from being injected and could results in a cross-site scripting (XSS) vulnerability. Prefer not to dynamically generate the &#39;src&#39; attribute and use static URLs instead. If you must do this, carefully check URLs against an allowlist and be sure to URL-encode the result.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/templates/index.html#L16'>webapp/src/main/resources/templates/index.html#L16</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.xss.mustache.explicit-unescape.template-explicit-unescape'>template-explicit-unescape</a></td>
+      <td>Detected an explicit unescape in a Mustache template, using triple braces &#39;{{{...}}}&#39; or ampersand &#39;&amp;&#39;. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/templates/index.html#L8'>webapp/src/main/resources/templates/index.html#L8</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.xss.mustache.var-in-href.var-in-href'>var-in-href</a></td>
+      <td>Detected a template variable used in an anchor tag with the &#39;href&#39; attribute. This allows a malicious actor to input the &#39;javascript:&#39; URI and is subject to cross- site scripting (XSS) attacks. If using a relative URL, start with a literal forward slash and concatenate the URL, like this: href=&#39;/{{link}}&#39;. You may also consider setting the Content Security Policy (CSP) header.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/templates/email/sla/openIncident.html#L29'>webapp/src/main/resources/templates/email/sla/openIncident.html#L29</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.audit.xss.template-href-var.template-href-var'>template-href-var</a></td>
+      <td>Detected a template variable used in an anchor tag with the &#39;href&#39; attribute. This allows a malicious actor to input the &#39;javascript:&#39; URI and is subject to cross- site scripting (XSS) attacks. Use the &#39;url&#39; template tag to safely generate a URL. You may also consider setting the Content Security Policy (CSP) header.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/templates/email/sla/openIncident.html#L29'>webapp/src/main/resources/templates/email/sla/openIncident.html#L29</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.flask.security.xss.audit.template-href-var.template-href-var'>template-href-var</a></td>
+      <td>Detected a template variable used in an anchor tag with the &#39;href&#39; attribute. This allows a malicious actor to input the &#39;javascript:&#39; URI and is subject to cross- site scripting (XSS) attacks. Use &#39;url_for()&#39; to safely generate a URL. You may also consider setting the Content Security Policy (CSP) header.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/webapp/src/main/resources/templates/email/sla/openIncident.html#L29'>webapp/src/main/resources/templates/email/sla/openIncident.html#L29</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.no-new-privileges.no-new-privileges'>no-new-privileges</a></td>
+      <td>Service &#39;db&#39; allows for privilege escalation via setuid or setgid binaries. Add &#39;no-new-privileges:true&#39; in &#39;security_opt&#39; to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/docker/docker-compose.yml#L3'>docker/docker-compose.yml#L3</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service'>writable-filesystem-service</a></td>
+      <td>Service &#39;db&#39; is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add &#39;read_only: true&#39; to this service to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/docker/docker-compose.yml#L3'>docker/docker-compose.yml#L3</a></td>
+    </tr>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-low"> Findings Summary- LOW Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableLow">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.xml-custom-entityresolver.xml-custom-entityresolver'>xml-custom-entityresolver</a></td>
+      <td>The application is using an XML parser that has not been safely configured. This might lead to XML External Entity (XXE) vulnerabilities when parsing user-controlled input. An attacker can include document type definitions (DTDs) which can interact with internal or external hosts. XXE can lead to other vulnerabilities, such as Local File Inclusion (LFI), Remote Code Execution (RCE), and Server-side request forgery (SSRF), depending on the application configuration. An attacker can also use DTDs to expand recursively, leading to a Denial-of-Service (DoS) attack, also known as a Billion Laughs Attack. By setting a custom `EntityResolver` for all previous security configurations for are bypassed. It is your responsibility to handle security in the `EntityResolver` implementation instead. For more information, see: [Java XXE prevention](https://semgrep.dev/docs/cheat-sheets/java-xxe/)</td>
+      <td>low</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/nnayar-r2c/mojito/blob/master/common/src/main/java/com/box/l10n/mojito/okapi/filters/XMLFilter.java#L101'>common/src/main/java/com/box/l10n/mojito/okapi/filters/XMLFilter.java#L101</a></td>
+    </tr>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    </body>
+    </html>
+    

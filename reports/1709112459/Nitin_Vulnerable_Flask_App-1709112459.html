@@ -1,0 +1,408 @@
+
+    <html>
+    <head>
+    <title> Semgrep SAST Scan Report for Repository: Nitin-Vulnerable-Flask-App </title>
+    <style>
+    .my_table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .my_table th, .my_table td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+    .my_table th {
+        background-color: #f2f2f2;
+    }
+    /* Example of setting specific column widths */
+    .my_table td:nth-of-type(1) { /* Targeting first column */
+        width: 20% !important;
+    }
+    .my_table td:nth-of-type(2) { /* Targeting second column */
+        width: 30% !important;
+    }
+    .my_table td:nth-of-type(3) { /* Targeting third column */
+        width: 10% !important;
+    }
+    .my_table td:nth-of-type(4) { /* Targeting fourth column */
+        width: 10% !important;
+    }
+    .my_table td:nth-of-type(5) { /* Targeting fifth column */
+        width: 15% !important;
+    }
+    .my_table td:nth-of-type(6) { /* Targeting sixth column */
+        width: 15% !important;
+    }
+    </style>
+    <style>
+        #myImage {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%; /* or any desired width */
+            height: auto; /* to maintain the aspect ratio */
+        }
+    </style>
+    <style>
+        .centered-table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    </head>
+    <header>
+        <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    </header>
+    <body>
+    <div style="height: 75px;"></div> <!-- Creates 75px of vertical space -->
+    <div class="container">
+    <img src="https://i.ibb.co/8xyV6WJ/Semgrep-logo.png" alt="logo" id="myImage">
+    </div>
+    <div class="container">
+    <h1> <p style="text-align: center;" id="sast"> Semgrep SAST Scan Report for Repository: Nitin-Vulnerable-Flask-App </p> </h1>
+    <h2> <p style="text-align: center;" id="reporttime"> Report Generated at 2024-02-28 09:28 </p> </h2>
+    </div>
+    <div style="height: 40px;"></div> <!-- Creates 50px of vertical space -->
+    <div class="topnav">
+    <h2> <p style="text-align: center;" id="sast-summary"> SAST Scan Summary </p> </h2>
+
+    <table border="1" class="centered-table"> <!-- Added border for visibility -->
+        <!-- Table Header -->
+        <tr>
+            <th>Vulnerability Severity</th>
+            <th>Vulnerability Count</th>
+        </tr>
+
+        <!-- Table Rows and Data Cells -->
+        <tr>
+            <td><a href="#sast-high"> Findings- SAST High Severity </a> </td>
+            <td> 11 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-med"> Findings- SAST Medium Severity </a> </td>
+            <td> 17 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-low"> Findings- SAST Low Severity </a> </td>
+            <td> 0 </td>
+        </tr>
+    </table>
+
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-high"> Findings Summary- HIGH Severity </p> </h2>
+    </div>
+    <div class="container">
+        <table border="1" class="dataframe my_table" id="tableHigh">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.browser.security.insecure-document-method.insecure-document-method'>insecure-document-method</a></td>
+      <td>User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/static/loader.js#L153'>app/static/loader.js#L153</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.browser.security.insecure-document-method.insecure-document-method'>insecure-document-method</a></td>
+      <td>User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/static/loader.js#L153'>app/static/loader.js#L153</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.injection.tainted-sql-string.tainted-sql-string'>tainted-sql-string</a></td>
+      <td>Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using the Django object-relational mappers (ORM) instead of raw SQL queries.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L261'>app/app.py#L261</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.flask.deserialization.tainted-pyyaml-flask.tainted-pyyaml-flask'>tainted-pyyaml-flask</a></td>
+      <td>Insecure deserialization (called pickling in python) is when user-controllable data is deserialized by an application. This potentially enables an attacker to manipulate serialized objects in order to pass harmful data into the application code and may result in arbitrary code execution, OS command injection or DoS. Many deserialization-based attacks are completed before deserialization is finished. This means that the deserialization process itself can initiate an attack, even if the app&#39;s own functionality does not directly interact with the malicious object. PyYAML&#39;s `yaml` module is as powerful as `pickle` and so may call any Python function. It is recommended to secure your application by using `yaml.SafeLoader` or `yaml.CSafeLoader`.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L329'>app/app.py#L329</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.flask.security.dangerous-template-string.dangerous-template-string'>dangerous-template-string</a></td>
+      <td>Found a template created with string formatting. This is susceptible to server-side template injection and cross-site scripting attacks.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L103'>app/app.py#L103</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.flask.security.dangerous-template-string.dangerous-template-string'>dangerous-template-string</a></td>
+      <td>Found a template created with string formatting. This is susceptible to server-side template injection and cross-site scripting attacks.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L271'>app/app.py#L271</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.flask.security.injection.tainted-sql-string.tainted-sql-string'>tainted-sql-string</a></td>
+      <td>Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as SQLAlchemy which will protect your queries.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L261'>app/app.py#L261</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.flask.security.insecure-deserialization.insecure-deserialization'>insecure-deserialization</a></td>
+      <td>Detected the use of an insecure deserialization library in a Flask route. These libraries are prone to code execution vulnerabilities. Ensure user data does not enter this function. To fix this, try to avoid serializing whole objects. Consider instead using a serializer such as JSON.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L329'>app/app.py#L329</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.jwt.security.jwt-hardcode.jwt-python-hardcoded-secret'>jwt-python-hardcoded-secret</a></td>
+      <td>Hardcoded JWT secret or private key is used. This is a Insufficiently Protected Credentials weakness: https://cwe.mitre.org/data/definitions/522.html Consider using an appropriate security mechanism to protect the credentials (e.g. keeping secrets in environment variables)</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L184'>app/app.py#L184</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.jwt.security.unverified-jwt-decode.unverified-jwt-decode'>unverified-jwt-decode</a></td>
+      <td>Detected JWT token decoded with &#39;verify=False&#39;. This bypasses any integrity checks for the token which means the token could be tampered with by malicious actors. Ensure that the JWT token is verified.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L97'>app/app.py#L97</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query'>sqlalchemy-execute-raw-query</a></td>
+      <td>Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L265'>app/app.py#L265</a></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-med"> Findings Summary- MEDIUM Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableMedium">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.browser.security.eval-detected.eval-detected'>eval-detected</a></td>
+      <td>Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/static/loader.js#L24'>app/static/loader.js#L24</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.browser.security.eval-detected.eval-detected'>eval-detected</a></td>
+      <td>Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/static/loader.js#L26'>app/static/loader.js#L26</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.browser.security.eval-detected.eval-detected'>eval-detected</a></td>
+      <td>Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/static/loader.js#L41'>app/static/loader.js#L41</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.express.security.audit.xss.mustache.var-in-href.var-in-href'>var-in-href</a></td>
+      <td>Detected a template variable used in an anchor tag with the &#39;href&#39; attribute. This allows a malicious actor to input the &#39;javascript:&#39; URI and is subject to cross- site scripting (XSS) attacks. If using a relative URL, start with a literal forward slash and concatenate the URL, like this: href=&#39;/{{link}}&#39;. You may also consider setting the Content Security Policy (CSP) header.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/templates/index.html#L12'>app/templates/index.html#L12</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp'>detect-non-literal-regexp</a></td>
+      <td>RegExp() called with a `c` function argument, this might allow an attacker to cause a Denial of Service (DoS) within your application as RegExP which blocks the main thread.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/static/loader.js#L55'>app/static/loader.js#L55</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp'>detect-non-literal-regexp</a></td>
+      <td>RegExp() called with a `c` function argument, this might allow an attacker to cause a Denial of Service (DoS) within your application as RegExP which blocks the main thread.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/static/loader.js#L55'>app/static/loader.js#L55</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp'>detect-non-literal-regexp</a></td>
+      <td>RegExp() called with a `c` function argument, this might allow an attacker to cause a Denial of Service (DoS) within your application as RegExP which blocks the main thread.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/static/loader.js#L59'>app/static/loader.js#L59</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop'>prototype-pollution-loop</a></td>
+      <td>Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/static/loader.js#L3'>app/static/loader.js#L3</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop'>prototype-pollution-loop</a></td>
+      <td>Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/static/loader.js#L106'>app/static/loader.js#L106</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.audit.xss.template-href-var.template-href-var'>template-href-var</a></td>
+      <td>Detected a template variable used in an anchor tag with the &#39;href&#39; attribute. This allows a malicious actor to input the &#39;javascript:&#39; URI and is subject to cross- site scripting (XSS) attacks. Use the &#39;url&#39; template tag to safely generate a URL. You may also consider setting the Content Security Policy (CSP) header.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/templates/index.html#L12'>app/templates/index.html#L12</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.injection.raw-html-format.raw-html-format'>raw-html-format</a></td>
+      <td>Detected user input flowing into a manually constructed HTML string. You may be accidentally bypassing secure methods of rendering HTML by manually constructing HTML and this could create a cross-site scripting vulnerability, which could let attackers steal sensitive user data. To be sure this is safe, check that the HTML is rendered safely. Otherwise, use templates (`django.shortcuts.render`) which will safely render HTML instead.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L103'>app/app.py#L103</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.flask.security.audit.render-template-string.render-template-string'>render-template-string</a></td>
+      <td>Found a template created with string formatting. This is susceptible to server-side template injection and cross-site scripting attacks.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L114'>app/app.py#L114</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.flask.security.audit.render-template-string.render-template-string'>render-template-string</a></td>
+      <td>Found a template created with string formatting. This is susceptible to server-side template injection and cross-site scripting attacks.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L281'>app/app.py#L281</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.flask.security.injection.raw-html-concat.raw-html-format'>raw-html-format</a></td>
+      <td>Detected user input flowing into a manually constructed HTML string. You may be accidentally bypassing secure methods of rendering HTML by manually constructing HTML and this could create a cross-site scripting vulnerability, which could let attackers steal sensitive user data. To be sure this is safe, check that the HTML is rendered safely. Otherwise, use templates (`flask.render_template`) which will safely render HTML instead.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L103'>app/app.py#L103</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.flask.security.xss.audit.template-href-var.template-href-var'>template-href-var</a></td>
+      <td>Detected a template variable used in an anchor tag with the &#39;href&#39; attribute. This allows a malicious actor to input the &#39;javascript:&#39; URI and is subject to cross- site scripting (XSS) attacks. Use &#39;url_for()&#39; to safely generate a URL. You may also consider setting the Content Security Policy (CSP) header.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/templates/index.html#L12'>app/templates/index.html#L12</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.lang.security.audit.formatted-sql-query.formatted-sql-query'>formatted-sql-query</a></td>
+      <td>Detected possible formatted SQL query. Use parameterized queries instead.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L265'>app/app.py#L265</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.lang.security.audit.md5-used-as-password.md5-used-as-password'>md5-used-as-password</a></td>
+      <td>It looks like MD5 is used as a password hash. MD5 is not considered a secure password hash because it can be cracked by an attacker in a short amount of time. Use a suitable password hashing function such as scrypt. You can use `hashlib.scrypt`.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>master</td>
+      <td><a href='https://github.com/we45/Vulnerable-Flask-App/blob/master/app/app.py#L141'>app/app.py#L141</a></td>
+    </tr>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-low"> Findings Summary- LOW Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableLow">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    </body>
+    </html>
+    

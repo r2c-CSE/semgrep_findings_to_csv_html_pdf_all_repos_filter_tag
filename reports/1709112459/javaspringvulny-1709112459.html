@@ -1,0 +1,344 @@
+
+    <html>
+    <head>
+    <title> Semgrep SAST Scan Report for Repository: javaspringvulny </title>
+    <style>
+    .my_table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .my_table th, .my_table td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+    .my_table th {
+        background-color: #f2f2f2;
+    }
+    /* Example of setting specific column widths */
+    .my_table td:nth-of-type(1) { /* Targeting first column */
+        width: 20% !important;
+    }
+    .my_table td:nth-of-type(2) { /* Targeting second column */
+        width: 30% !important;
+    }
+    .my_table td:nth-of-type(3) { /* Targeting third column */
+        width: 10% !important;
+    }
+    .my_table td:nth-of-type(4) { /* Targeting fourth column */
+        width: 10% !important;
+    }
+    .my_table td:nth-of-type(5) { /* Targeting fifth column */
+        width: 15% !important;
+    }
+    .my_table td:nth-of-type(6) { /* Targeting sixth column */
+        width: 15% !important;
+    }
+    </style>
+    <style>
+        #myImage {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%; /* or any desired width */
+            height: auto; /* to maintain the aspect ratio */
+        }
+    </style>
+    <style>
+        .centered-table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    </head>
+    <header>
+        <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    </header>
+    <body>
+    <div style="height: 75px;"></div> <!-- Creates 75px of vertical space -->
+    <div class="container">
+    <img src="https://i.ibb.co/8xyV6WJ/Semgrep-logo.png" alt="logo" id="myImage">
+    </div>
+    <div class="container">
+    <h1> <p style="text-align: center;" id="sast"> Semgrep SAST Scan Report for Repository: javaspringvulny </p> </h1>
+    <h2> <p style="text-align: center;" id="reporttime"> Report Generated at 2024-02-28 09:28 </p> </h2>
+    </div>
+    <div style="height: 40px;"></div> <!-- Creates 50px of vertical space -->
+    <div class="topnav">
+    <h2> <p style="text-align: center;" id="sast-summary"> SAST Scan Summary </p> </h2>
+
+    <table border="1" class="centered-table"> <!-- Added border for visibility -->
+        <!-- Table Header -->
+        <tr>
+            <th>Vulnerability Severity</th>
+            <th>Vulnerability Count</th>
+        </tr>
+
+        <!-- Table Rows and Data Cells -->
+        <tr>
+            <td><a href="#sast-high"> Findings- SAST High Severity </a> </td>
+            <td> 2 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-med"> Findings- SAST Medium Severity </a> </td>
+            <td> 18 </td>
+        </tr>
+        <tr>
+            <td> <a href="#sast-low"> Findings- SAST Low Severity </a> </td>
+            <td> 0 </td>
+        </tr>
+    </table>
+
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-high"> Findings Summary- HIGH Severity </p> </h2>
+    </div>
+    <div class="container">
+        <table border="1" class="dataframe my_table" id="tableHigh">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=generic.secrets.security.detected-private-key.detected-private-key'>detected-private-key</a></td>
+      <td>Private Key detected. This is a sensitive credential and should not be hardcoded here. Instead, store this in a separate, private file.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/resources/keyStore.pem#L5'>src/main/resources/keyStore.pem#L5</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.servlets.security.crlf-injection-logs-deepsemgrep.crlf-injection-logs-deepsemgrep'>crlf-injection-logs-deepsemgrep</a></td>
+      <td>When data from an untrusted source is put into a logger and not neutralized correctly, an attacker could forge log entries or include malicious content.</td>
+      <td>high</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/java/hawk/api/jwt/JwtLog4jController.java#L24'>src/main/java/hawk/api/jwt/JwtLog4jController.java#L24</a></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-med"> Findings Summary- MEDIUM Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableMedium">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.cookie-missing-httponly.cookie-missing-httponly'>cookie-missing-httponly</a></td>
+      <td>A cookie was detected without setting the &#39;HttpOnly&#39; flag. The &#39;HttpOnly&#39; flag for cookies instructs the browser to forbid client-side scripts from reading the cookie. Set the &#39;HttpOnly&#39; flag by calling &#39;cookie.setHttpOnly(true);&#39;</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/java/hawk/controller/LoginController.java#L57'>src/main/java/hawk/controller/LoginController.java#L57</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.lang.security.audit.cookie-missing-secure-flag.cookie-missing-secure-flag'>cookie-missing-secure-flag</a></td>
+      <td>A cookie was detected without setting the &#39;secure&#39; flag. The &#39;secure&#39; flag for cookies prevents the client from transmitting the cookie over insecure channels such as HTTP. Set the &#39;secure&#39; flag by calling &#39;new Cookie(&quot;XLOGINID&quot;, cookieCode).setSecure(true);&#39;</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/java/hawk/controller/LoginController.java#L57'>src/main/java/hawk/controller/LoginController.java#L57</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.servlets.security.audit.cookie-missing-httponly.cookie-missing-httponly'>cookie-missing-httponly</a></td>
+      <td>A cookie was detected without setting the &#39;HttpOnly&#39; flag. The &#39;HttpOnly&#39; flag for cookies instructs the browser to forbid client-side scripts from reading the cookie. Set the &#39;HttpOnly&#39; flag by calling &#39;cookie.setHttpOnly(true);&#39;</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/java/hawk/controller/LoginController.java#L57'>src/main/java/hawk/controller/LoginController.java#L57</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.servlets.security.audit.cookie-missing-samesite.cookie-missing-samesite'>cookie-missing-samesite</a></td>
+      <td>The application does not appear to verify inbound requests which can lead to a Cross-site request forgery (CSRF) vulnerability. If the application uses cookie-based authentication, an attacker can trick users into sending authenticated HTTP requests without their knowledge from any arbitrary domain they visit. To prevent this vulnerability start by identifying if the framework or library leveraged has built-in features or offers plugins for CSRF protection. CSRF tokens should be unique and securely random. The `Synchronizer Token` or `Double Submit Cookie` patterns with defense-in-depth mechanisms such as the `sameSite` cookie flag can help prevent CSRF. For more information, see: [Cross-site request forgery prevention](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/java/hawk/controller/LoginController.java#L57'>src/main/java/hawk/controller/LoginController.java#L57</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.servlets.security.audit.cookie-missing-secure-flag.cookie-missing-secure-flag'>cookie-missing-secure-flag</a></td>
+      <td>A cookie was detected without setting the &#39;secure&#39; flag. The &#39;secure&#39; flag for cookies prevents the client from transmitting the cookie over insecure channels such as HTTP. Set the &#39;secure&#39; flag by calling &#39;new Cookie(&quot;XLOGINID&quot;, cookieCode).setSecure(true);&#39;</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/java/hawk/controller/LoginController.java#L57'>src/main/java/hawk/controller/LoginController.java#L57</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.audit.spring-csrf-disabled.spring-csrf-disabled'>spring-csrf-disabled</a></td>
+      <td>CSRF protection is disabled for this configuration. This is a security risk.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/java/hawk/MultiHttpSecurityConfig.java#L47'>src/main/java/hawk/MultiHttpSecurityConfig.java#L47</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.audit.spring-csrf-disabled.spring-csrf-disabled'>spring-csrf-disabled</a></td>
+      <td>CSRF protection is disabled for this configuration. This is a security risk.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/java/hawk/MultiHttpSecurityConfig.java#L88'>src/main/java/hawk/MultiHttpSecurityConfig.java#L88</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.audit.spring-csrf-disabled.spring-csrf-disabled'>spring-csrf-disabled</a></td>
+      <td>CSRF protection is disabled for this configuration. This is a security risk.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/java/hawk/MultiHttpSecurityConfig.java#L110'>src/main/java/hawk/MultiHttpSecurityConfig.java#L110</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=java.spring.security.audit.spring-csrf-disabled.spring-csrf-disabled'>spring-csrf-disabled</a></td>
+      <td>CSRF protection is disabled for this configuration. This is a security risk.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/java/hawk/MultiHttpSecurityConfig.java#L181'>src/main/java/hawk/MultiHttpSecurityConfig.java#L181</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/resources/templates/general.html#L30'>src/main/resources/templates/general.html#L30</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/resources/templates/login-form-multi.html#L15'>src/main/resources/templates/login-form-multi.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/resources/templates/login.html#L15'>src/main/resources/templates/login.html#L15</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/resources/templates/search.html#L14'>src/main/resources/templates/search.html#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=python.django.security.django-no-csrf-token.django-no-csrf-token'>django-no-csrf-token</a></td>
+      <td>Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/src/main/resources/templates/user-search.html#L14'>src/main/resources/templates/user-search.html#L14</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.no-new-privileges.no-new-privileges'>no-new-privileges</a></td>
+      <td>Service &#39;db&#39; allows for privilege escalation via setuid or setgid binaries. Add &#39;no-new-privileges:true&#39; in &#39;security_opt&#39; to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/docker-compose.yml#L3'>docker-compose.yml#L3</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.no-new-privileges.no-new-privileges'>no-new-privileges</a></td>
+      <td>Service &#39;javavulny&#39; allows for privilege escalation via setuid or setgid binaries. Add &#39;no-new-privileges:true&#39; in &#39;security_opt&#39; to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/docker-compose.yml#L12'>docker-compose.yml#L12</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service'>writable-filesystem-service</a></td>
+      <td>Service &#39;db&#39; is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add &#39;read_only: true&#39; to this service to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/docker-compose.yml#L3'>docker-compose.yml#L3</a></td>
+    </tr>
+    <tr>
+      <td><a href='https://semgrep.dev/r?q=yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service'>writable-filesystem-service</a></td>
+      <td>Service &#39;javavulny&#39; is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add &#39;read_only: true&#39; to this service to prevent this.</td>
+      <td>medium</td>
+      <td>unresolved</td>
+      <td>refs/heads/master</td>
+      <td><a href='https://github.com/Nitin-Personal/javaspringvulny.git/blob/master/docker-compose.yml#L12'>docker-compose.yml#L12</a></td>
+    </tr>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    <div style="page-break-after: always;"></div>
+
+    <div class="heading">
+    <h2> <p id="sast-low"> Findings Summary- LOW Severity </p> </h2>
+    </div>
+    <div class="container">
+    <table style="width: 100%;">
+    <table border="1" class="dataframe my_table" id="tableLow">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Finding Title</th>
+      <th>Finding Description & Remediation</th>
+      <th>severity</th>
+      <th>state</th>
+      <th>ref</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+    </table>
+    </div>
+
+    </body>
+    </html>
+    
