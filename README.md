@@ -11,11 +11,14 @@ This script automates the process of generating Security Static Analysis (SAST) 
 - Combine reports from multiple projects into a single comprehensive report.
 - Filter findings based on severity to focus on the most critical issues.
 - Automated report generation with timestamping for historical tracking.
+- [NEW] Provides a security grade to each repository based on number of High, Medium and Low `Open` vulnerabilities found
+- [NEW] Create a bar graph showing the top 15 repos by number of High, Medium and Low `Open` vulnerabilities 
+- [NEW] Create a bar graph showing the top 15 repos by number of High, Medium and Low `Fixed` vulnerabilities
 
 ## Prerequisites
 
 - Python 3.x
-- `requests`, `pandas`, `fpdf`, `html`, `pdfkit`, `PyPDF2` Python packages
+- `requests`, `pandas`, `fpdf`, `html`, `pdfkit`, `PyPDF2`, `plotly` Python packages
 - A valid Semgrep API web token set as an environment variable `SEMGREP_API_WEB_TOKEN`
 - Access to Semgrep projects and deployments
 
@@ -24,7 +27,8 @@ This script automates the process of generating Security Static Analysis (SAST) 
 1. Ensure Python 3 and pip are installed.
 2. Install the required Python packages:
 
-`pip install requests pandas fpdf pdfkit PyPDF2`
+`pip install pandas requests fpdf pdfkit PyPDF2 plotly`
+
 
 ## Configuration
 Before running the script, you must set up the `SEMGREP_API_WEB_TOKEN` environment variable with your Semgrep API token:
