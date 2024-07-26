@@ -399,7 +399,10 @@ def process_sast_findings(df: pd.DataFrame, html_filename, pdf_filename, repo_na
         'orientation': 'Landscape',
         'enable-local-file-access': None
     }
-    pdfkit.from_string(html, pdf_filename, options=options)
+    try:
+        pdfkit.from_string(html, pdf_filename, options=options)
+    except OSError:
+        logging.info("Skipping PDF because wkhtmltopdf not found. You can get it here: https://wkhtmltopdf.org/")
 
 def json_to_html_pandas(json_file, html_file, pdf_file, repo_name):
 

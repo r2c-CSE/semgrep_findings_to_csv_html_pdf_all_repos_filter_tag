@@ -685,7 +685,10 @@ def combine_html_files(severity_and_state_counts_all_repos, vulnerability_counts
         'orientation': 'Landscape',
         'enable-local-file-access': None
     }
-    pdfkit.from_string(combined_html, os.path.join(folder_path, output_pdf_filename), options=options)
+    try:
+        pdfkit.from_string(combined_html, os.path.join(folder_path, output_pdf_filename), options=options)
+    except OSError:
+        logging.info("Skipping PDF because wkhtmltopdf not found. You can get it here: https://wkhtmltopdf.org/")
 
 def generate_html_sast(df_high: pd.DataFrame, df_med: pd.DataFrame, df_low: pd.DataFrame, repo_name):
     # get the Overview table HTML from the dataframe

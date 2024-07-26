@@ -33,6 +33,8 @@ This script automates the process of generating Security Static Analysis (SAST) 
 
 `pip install pandas requests fpdf pdfkit PyPDF2 plotly`
 
+3. (Optional) To get PDF output, install `wkhtmltopdf` from https://wkhtmltopdf.org/
+
 
 ## Configuration
 Before running the script, you must set up the `SEMGREP_API_WEB_TOKEN` environment variable with your Semgrep API token:
