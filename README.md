@@ -43,10 +43,12 @@ Generate your `SEMGREP_API_WEB_TOKEN` from https://semgrep.dev/orgs/-/settings/t
 
 Optionally, you can modify the script to change the default behavior, such as filtering findings based on severity by setting `FILTER_IMPORTANT_FINDINGS` to `True` or `False`.
 
-Usage
+## Usage
+[Add a tag](https://semgrep.dev/docs/semgrep-appsec-platform/tags) to the projects you want to generate reports for, if they don't already have a tag in common. One quick way to do this is to select them in the [Projects view](https://semgrep.dev/orgs/-/projects) and click Edit.
+
 Run the script from the command line, specifying the tag of the projects you want to generate reports for:
 
-`python semgrep_report_generator.py --tag <your_project_tag>`
+`python semgrep_findings_to_csv_html_pdf_all_repos_filter_tag.py --tag <your_project_tag>`
 
 ## The script will perform the following actions:
 
