@@ -415,7 +415,7 @@ def json_to_html_pandas(json_file, html_file, pdf_file, repo_name):
     logging.info("Findings converted from JSON file : " + json_file + " to HTML File: " + html_file)
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
 
     user_inputs = sys.argv[1:]
     logging.debug(user_inputs)

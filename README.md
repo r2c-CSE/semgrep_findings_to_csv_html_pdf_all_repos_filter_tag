@@ -4,9 +4,9 @@
 
 This script automates the process of generating Security Static Analysis (SAST) reports for projects managed under a specified organization in Semgrep. It fetches project data, analyzes security findings, and compiles detailed reports in various formats including JSON, CSV, XLSX, HTML, and PDF. The script supports filtering findings based on severity and allows for comprehensive reporting by combining individual project findings into a single overview.
 
-[Example PDF Report](https://github.com/r2c-CSE/semgrep_findings_to_csv_html_pdf_all_repos_filter_tag/blob/FR-security_grades_bar_graphs/reports/1709112459/combined_output_portfolio-B.pdf)
+[Example PDF Report](https://github.com/r2c-CSE/semgrep_findings_to_csv_html_pdf_all_repos_filter_tag/blob/FR-security_grades_bar_graphs/example-reports/1709112459/combined_output_portfolio-B.pdf)
 
-[Example HTML Report](https://github.com/r2c-CSE/semgrep_findings_to_csv_html_pdf_all_repos_filter_tag/blob/FR-security_grades_bar_graphs/reports/1709112459/combined_output_portfolio-B.html)
+[Example HTML Report](https://github.com/r2c-CSE/semgrep_findings_to_csv_html_pdf_all_repos_filter_tag/blob/FR-security_grades_bar_graphs/example-reports/1709112459/combined_output_portfolio-B.html)
 
 ## Features
 
