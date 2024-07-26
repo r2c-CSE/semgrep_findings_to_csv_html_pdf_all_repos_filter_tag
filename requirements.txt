@@ -1,0 +1,9 @@
+pandas
+requests
+fpdf
+pdfkit
+PyPDF2
+plotly
+xlsxwriter
+kaleido
+

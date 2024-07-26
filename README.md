@@ -29,9 +29,9 @@ This script automates the process of generating Security Static Analysis (SAST) 
 ## Installation
 
 1. Ensure Python 3 and pip are installed.
-2. Install the required Python packages:
+2. Install dependencies:
 
-`pip install pandas requests fpdf pdfkit PyPDF2 plotly`
+`pip install -r requirements.txt`
 
 
 ## Configuration
